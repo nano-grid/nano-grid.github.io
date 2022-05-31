@@ -25,7 +25,7 @@
 </template>
 
 <script>
-// import PanelNavigation from "./components/panel-navigation.vue";
+import PanelNavigation from "./components/panel-navigation.vue";
 import { playSound } from "./modules/helpers";
 import { mapGetters, mapMutations } from "vuex";
 
@@ -34,7 +34,7 @@ export default {
     playSound,
   }),
   components: {
-    // PanelNavigation,
+    PanelNavigation,
   },
   computed: {
     ...mapGetters({

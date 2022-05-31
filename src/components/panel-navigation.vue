@@ -13,7 +13,6 @@
                   color="shamrock"
                   size="md"
                   :title="`${nav.route[0]} button`"
-                  v-nano-tooltip.right="nav.tooltip"
                   :glyph="nav.icon"
                 />
               </template>
@@ -24,22 +23,18 @@
                   color="shamrock"
                   size="md"
                   :title="`${nav.route[0]} button`"
-                  v-nano-tooltip.right="nav.tooltip"
                   @click="toggleValue('panel'), playSound()"
                   :glyph="nav.icon"
                   active
                 />
               </template>
             </template>
-      
-            <hr />
             <hr />
             <btn
               color="gold-tips"
               size="md"
               mode="transparent"
               title="Toggle theme button"
-              v-nano-tooltip.right="$t('toggleTheme')"
               glyph="brightness"
               @click="toggleValue('theme'), playSound()"
               :active="theme"

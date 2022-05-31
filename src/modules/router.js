@@ -5,7 +5,7 @@ import { createRouter, createWebHistory } from 'vue-router';
 const routes = [
   {
     path: '/',
-    name: 'Home',
+    name: 'home',
     components: {
       workarea: HomeWorkareaView,
       panel: HomePanelView,
