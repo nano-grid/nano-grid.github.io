@@ -2,24 +2,24 @@
   <nn-scroll-area color="royal-purple">
     <nn-container>
       <div class="nano-box">
-        <h1>Tests</h1>
+        <h1>getVals(formula: string): object</h1>
         <hr />
 
         <template v-for="(row, rowIndex) in cases" :key="'rowIndex' + rowIndex">
-          <h2>{{ row.case }}</h2>
+          <h2>-- {{ row.case }}</h2>
           <article class="nano-shade-box">
             <nn-row>
-              <nn-column size="200">test:</nn-column>
-              <nn-column size="2/3-200">{{ row.test }}</nn-column>
+              <nn-column size="200">test formula:</nn-column>
+              <nn-column size="100%-200">{{ row.test }}</nn-column>
 
               <nn-column size="100%">
                 <hr />
               </nn-column>
 
               <nn-column size="200">width:</nn-column>
-              <nn-column size="1/2-160">{{ row.expect.width }}</nn-column>
-              <nn-column size="1/2-160">{{ getVals(row.test).width }}</nn-column>
-              <nn-column size="120">
+              <nn-column size="1/2-150">{{ row.expect.width || '--' }}</nn-column>
+              <nn-column size="1/2-150">{{ getVals(row.test).width || '--' }}</nn-column>
+              <nn-column size="100">
                 {{ isPassing(row.expect.width, getVals(row.test).width) }}
               </nn-column>
 
@@ -28,11 +28,11 @@
               </nn-column>
 
               <nn-column size="200">width style:</nn-column>
-              <nn-column size="1/2-160">{{ row.expect.widthStyle }}</nn-column>
-              <nn-column size="1/2-160">{{
-                getVals(row.test).widthStyle
+              <nn-column size="1/2-150">{{ row.expect.widthStyle || '--' }}</nn-column>
+              <nn-column size="1/2-150">{{
+                getVals(row.test).widthStyle || '--'
               }}</nn-column>
-              <nn-column size="120">
+              <nn-column size="100">
                 {{
                   isPassing(row.expect.widthStyle, getVals(row.test).widthStyle)
                 }}
@@ -43,11 +43,11 @@
               </nn-column>
 
               <nn-column size="200">height style:</nn-column>
-              <nn-column size="1/2-160">{{ row.expect.heightStyle }}</nn-column>
-              <nn-column size="1/2-160">{{
-                getVals(row.test).heightStyle
+              <nn-column size="1/2-150">{{ row.expect.heightStyle || '--' }}</nn-column>
+              <nn-column size="1/2-150">{{
+                getVals(row.test).heightStyle || '--'
               }}</nn-column>
-              <nn-column size="120">
+              <nn-column size="100">
                 {{
                   isPassing(
                     row.expect.heightStyle,
@@ -61,13 +61,13 @@
               </nn-column>
 
               <nn-column size="200">has css width class:</nn-column>
-              <nn-column size="1/2-160">{{
+              <nn-column size="1/2-150">{{
                 row.expect.hasCSSWidthClass
               }}</nn-column>
-              <nn-column size="1/2-160">{{
+              <nn-column size="1/2-150">{{
                 getVals(row.test).hasCSSWidthClass
               }}</nn-column>
-              <nn-column size="120">
+              <nn-column size="100">
                 {{
                   isPassing(
                     row.expect.hasCSSWidthClass,
@@ -259,12 +259,8 @@ export default {
   computed: {},
   created() {},
   methods: {
-    getResult(formula) {
-      const fx = getVals(formula);
-      return `width: ${fx.width}, widthStyle: ${fx.widthStyle}, heightStyle: ${fx.heightStyle}`;
-    },
     isPassing(a, b) {
-      return a === b ? "passing ⭐" : "not passing 🔥";
+      return a === b ? "passed ⭐" : "failed 🔥";
     },
   },
 };
