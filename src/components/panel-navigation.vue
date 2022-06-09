@@ -48,22 +48,34 @@
 
 <script>
 import { mapGetters, mapMutations } from "vuex";
-import { linkGithub, linkLinkedin } from "../db/user";
 import { playSound } from "../modules/helpers";
 
 export default {
   components: {},
   data: () => ({
     navigation: [
+      // {
+      //   tooltip: "Builder",
+      //   icon: "monster",
+      //   route: ["builder"],
+      // },
       {
-        tooltip: "Home",
+        tooltip: "Classes",
         icon: "monster",
-        route: ["home"],
+        route: ["classes"],
+      },
+      // {
+      //   tooltip: "Gallery",
+      //   icon: "monster",
+      //   route: ["gallery"],
+      // },
+      {
+        tooltip: "Tests",
+        icon: "monster",
+        route: ["tests"],
       },
     ],
     playSound,
-    linkGithub,
-    linkLinkedin,
   }),
   computed: {
     ...mapGetters({

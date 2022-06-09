@@ -1,5 +1,7 @@
 <template>
-  <h1>Home</h1>
+  <nn-scroll-area>
+    <h1>Home Panel</h1>
+  </nn-scroll-area>
 </template>
 
 <script>
