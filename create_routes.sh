@@ -1,6 +1,6 @@
 cd dist
 
-files=("home")
+files=("home" "classes" "tests")
 
 for f in ${files[@]}; do
   rm -r -f -v ${f}.html
