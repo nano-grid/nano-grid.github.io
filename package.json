@@ -12,6 +12,7 @@
     "core-js": "^3.6.5",
     "nano-grid": "file:../app_web_module_nanogrid",
     "nano-grid-extended": "file:../app_web_module_nanogrid-extended",
+    "nano-spirit": "file:../app_web_module_nano-spirit",
     "vue": "^3.0.0",
     "vue-router": "^4.0.0-0",
     "vuex": "^4.0.0-0"

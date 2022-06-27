@@ -9,20 +9,20 @@
                 <btn
                   :to="{ name: nav.route[0] }"
                   :key="nav.route[0]"
-                  mode="transparent"
+                  mode="nav"
                   color="shamrock"
                   size="md"
-                  :title="`${nav.route[0]} button`"
+                  :title="nav.tooltip"
                   :glyph="nav.icon"
                 />
               </template>
               <template v-else>
                 <btn
                   :key="nav.route[0]"
-                  mode="transparent"
+                  mode="nav"
                   color="shamrock"
                   size="md"
-                  :title="`${nav.route[0]} button`"
+                  :title="nav.tooltip"
                   @click="toggleValue('panel'), playSound()"
                   :glyph="nav.icon"
                   active
@@ -33,7 +33,7 @@
             <btn
               color="gold-tips"
               size="md"
-              mode="transparent"
+              mode="nav"
               title="Toggle theme button"
               glyph="brightness"
               @click="toggleValue('theme'), playSound()"
@@ -54,11 +54,11 @@ export default {
   components: {},
   data: () => ({
     navigation: [
-      // {
-      //   tooltip: "Builder",
-      //   icon: "monster",
-      //   route: ["builder"],
-      // },
+      {
+        tooltip: "Builder",
+        icon: "monster",
+        route: ["builder"],
+      },
       {
         tooltip: "Classes",
         icon: "monster",

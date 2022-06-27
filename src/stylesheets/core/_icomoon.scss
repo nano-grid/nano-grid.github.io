@@ -77,17 +77,13 @@ $icons: (
   font-display: block;
 }
 
-nn-icon {
+#{wc("icon")} {
   /* use !important to prevent issues with browser extensions that change fonts */
   font-family: "icomoon" !important;
 
   @each $name, $value in $icons {
-    &.#{$name}:before {
+    &.nn-#{$name}:before {
       content: $value;
     }
   }
-}
-
-@function g-icon($key) {
-  @return map-get($icons, $key);
 }

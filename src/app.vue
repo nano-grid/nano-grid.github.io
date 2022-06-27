@@ -46,7 +46,7 @@ export default {
       return `section-${this.$route.name}`;
     },
     classes() {
-      return [this.sectionName, this.theme ? "nano-light" : "nano-dark"];
+      return [this.sectionName, this.theme ? "nn-light" : "nn-dark"];
     },
   },
   created() {

@@ -1,6 +1,8 @@
 // import { DateTime } from "luxon";
 import { icons } from "../db/icons";
 
+export const nano = "nn-";
+
 // const initialDate = { years: 1990, months: 5, days: 5, hours: 13, };
 
 export const getID = (client, date) => {

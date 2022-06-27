@@ -41,8 +41,7 @@
         <h1>Available Absolute Sizes (61)</h1>
         <hr />
         <p>
-          Values between 0 and 300 that return an integer when divided by
-          5.
+          Values between 0 and 300 that return an integer when divided by 5.
         </p>
       </div>
 
@@ -60,7 +59,7 @@
           </div>
           <div class="table-body" role="rowgroup">
             <template
-              v-for="(klass, klassIndex) in cssWClass"
+              v-for="(klass, klassIndex) in availableClasses"
               :key="'klassIndex' + klassIndex"
             >
               <nn-row breakpoint="lg">
@@ -86,6 +85,54 @@
                 </nn-column>
               </nn-row>
             </template>
+            <nn-row breakpoint="lg">
+              <template v-if="!allRowsVisible">
+                <nn-column size="1/3">
+                  <btn
+                    text="Show 50+ Rows"
+                    title="Show More Rows"
+                    @click="showMoreRows()"
+                    color="shamrock"
+                  />
+                </nn-column>
+                <nn-column size="1/3">
+                  <btn
+                    text="Show All Rows"
+                    @click="showAllRows()"
+                    color="gold-tips"
+                  />
+                </nn-column>
+                 <nn-column size="1/3">
+                  <btn
+                    :text="
+                      '( ' +
+                      availableClassesLimit +
+                      ' of ' +
+                      cssWClass.size +
+                      ' )'
+                    "
+                    title="All Rows"
+                    
+                    disabled
+                  />
+                </nn-column>
+              </template>
+              <template v-else>
+                <nn-column size="1/1">
+                  <btn
+                    :text="
+                      '( ' +
+                      availableClassesLimit +
+                      ' of ' +
+                      cssWClass.size +
+                      ' )'
+                    "
+                    title="All Rows"
+                    disabled
+                  />
+                </nn-column>
+              </template>
+            </nn-row>
           </div>
         </div>
       </div>
@@ -100,10 +147,30 @@ export default {
   data: () => ({
     cssWClass,
     cssWidthClasses,
+    availableClassesLimit: 25,
   }),
-  computed: {},
+  computed: {
+    availableClasses() {
+      return [...cssWClass].filter(
+        (item, index) => index < this.availableClassesLimit
+      );
+    },
+    allRowsVisible() {
+      return this.availableClassesLimit === cssWClass.size;
+    },
+  },
   created() {},
   methods: {
+    showMoreRows() {
+      this.availableClassesLimit += 50;
+      let outOfRange = this.availableClassesLimit > cssWClass.size;
+      if (outOfRange) {
+        this.availableClassesLimit = cssWClass.size;
+      }
+    },
+    showAllRows() {
+      this.availableClassesLimit = cssWClass.size;
+    },
     class2Formula(klass) {
       return klass
         .replace("nn-w", "")
