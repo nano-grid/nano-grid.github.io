@@ -1,7 +1,7 @@
 import BuilderWorkareaView from '../views/builder-workarea.vue';
-import BuilderPanelView from '../views/builder-panel.vue';
 import ClassesWorkareaView from '../views/classes-workarea.vue';
-import GalleryWorkareaView from '../views/gallery-workarea.vue';
+import DictionaryWorkareaView from '../views/dictionary-workarea.vue';
+import DocumentationWorkareaView from '../views/documentation-workarea.vue';
 import TestsWorkareaView from '../views/tests-workarea.vue';
 import { createRouter, createWebHistory } from 'vue-router';
 
@@ -15,21 +15,27 @@ const routes = [
     name: 'builder',
     components: {
       workarea: BuilderWorkareaView,
-      panel: BuilderPanelView,
     },
   },
   {
-    path: '/classes',
-    name: 'classes',
+    path: '/sizes',
+    name: 'sizes',
     components: {
       workarea: ClassesWorkareaView,
     },
   },
   {
-    path: '/gallery',
-    name: 'gallery',
+    path: '/documentation',
+    name: 'documentation',
     components: {
-      workarea: GalleryWorkareaView,
+      workarea: DictionaryWorkareaView,
+    },
+  },
+  {
+    path: '/installation',
+    name: 'installation',
+    components: {
+      workarea: DocumentationWorkareaView,
     },
   },
   {

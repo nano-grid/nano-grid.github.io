@@ -1,79 +1,203 @@
 <template>
   <nn-scroll-area color="royal-purple">
     <nn-container>
-      <div class="nano-box">
+      <div class="nn-box">
         <h1>getVals(formula: string): object</h1>
         <hr />
 
         <template v-for="(row, rowIndex) in cases" :key="'rowIndex' + rowIndex">
-          <h2>-- {{ row.case }}</h2>
-          <article class="nano-shade-box">
+          <article class="nn-shade">
             <nn-row>
-              <nn-column size="200">test formula:</nn-column>
-              <nn-column size="100%-200">{{ row.test }}</nn-column>
+              <nn-column size="50%">
+                <span class="nn-label nn-desert">{{ row.case }}</span>
+              </nn-column>
+              <nn-column size="50%">
+                <span class="nn-label nn-desert">{{ row.test }}</span>
+              </nn-column>
+            </nn-row>
 
-              <nn-column size="100%">
-                <hr />
+            <nn-row>
+              <nn-column size="200">
+                <span class="nn-label nn-denim">Attribute</span>
               </nn-column>
 
-              <nn-column size="200">width:</nn-column>
-              <nn-column size="1/2-150">{{ row.expect.width || '--' }}</nn-column>
-              <nn-column size="1/2-150">{{ getVals(row.test).width || '--' }}</nn-column>
-              <nn-column size="100">
-                {{ isPassing(row.expect.width, getVals(row.test).width) }}
+              <nn-column size="1/2-115">
+                <span class="nn-label nn-denim">Expected</span>
               </nn-column>
 
-              <nn-column size="100%">
-                <hr />
+              <nn-column size="1/2-120">
+                <span class="nn-label nn-denim">Returned</span>
+              </nn-column>
+              <nn-column size="35">
+                <span class="nn-label nn-denim"></span>
+              </nn-column>
+            </nn-row>
+
+            <nn-row>
+              <nn-column size="200">
+                <span class="nn-label nn-gravel">Width Class</span>
+              </nn-column>
+              <nn-column size="1/2-115">
+                <span class="nn-label">
+                  {{ row.expect.width || "--" }}
+                </span>
+              </nn-column>
+              <nn-column size="1/2-120">
+                <span class="nn-label">
+                  {{ getVals(row.test).width || "--" }}
+                </span>
+              </nn-column>
+              <nn-column size="35">
+                <template
+                  v-if="isPassing(row.expect.width, getVals(row.test).width)"
+                >
+                  <span class="nn-label nn-gold-tips">
+                    <nn-icon glyph="star" />
+                  </span>
+                </template>
+                <template v-else>
+                  <span class="nn-label nn-persian-red">
+                    <nn-icon glyph="times" />
+                  </span>
+                </template>
+              </nn-column>
+            </nn-row>
+
+            <nn-row>
+              <nn-column size="200">
+                <span class="nn-label nn-gravel">Width Style</span>
+              </nn-column>
+              <nn-column size="1/2-115">
+                <span class="nn-label">
+                  {{ row.expect.widthStyle || "--" }}
+                </span>
               </nn-column>
 
-              <nn-column size="200">width style:</nn-column>
-              <nn-column size="1/2-150">{{ row.expect.widthStyle || '--' }}</nn-column>
-              <nn-column size="1/2-150">{{
-                getVals(row.test).widthStyle || '--'
-              }}</nn-column>
-              <nn-column size="100">
-                {{
-                  isPassing(row.expect.widthStyle, getVals(row.test).widthStyle)
-                }}
+              <nn-column size="1/2-120">
+                <span class="nn-label">
+                  {{ getVals(row.test).widthStyle || "--" }}
+                </span>
               </nn-column>
-
-              <nn-column size="100%">
-                <hr />
+              <nn-column size="35">
+                <template
+                  v-if="
+                    isPassing(
+                      row.expect.widthStyle,
+                      getVals(row.test).widthStyle
+                    )
+                  "
+                >
+                  <span class="nn-label nn-gold-tips">
+                    <nn-icon glyph="star" />
+                  </span>
+                </template>
+                <template v-else>
+                  <span class="nn-label nn-persian-red">
+                    <nn-icon glyph="times" />
+                  </span>
+                </template>
               </nn-column>
+            </nn-row>
 
-              <nn-column size="200">height style:</nn-column>
-              <nn-column size="1/2-150">{{ row.expect.heightStyle || '--' }}</nn-column>
-              <nn-column size="1/2-150">{{
-                getVals(row.test).heightStyle || '--'
-              }}</nn-column>
-              <nn-column size="100">
-                {{
-                  isPassing(
-                    row.expect.heightStyle,
-                    getVals(row.test).heightStyle
-                  )
-                }}
+            <nn-row>
+              <nn-column size="200">
+                <span class="nn-label nn-gravel">Height Style</span>
               </nn-column>
-
-              <nn-column size="100%">
-                <hr />
+              <nn-column size="1/2-115">
+                <span class="nn-label">
+                  {{ row.expect.heightStyle || "--" }}
+                </span>
               </nn-column>
+              <nn-column size="1/2-120">
+                <span class="nn-label">
+                  {{ getVals(row.test).heightStyle || "--" }}
+                </span>
+              </nn-column>
+              <nn-column size="35">
+                <template
+                  v-if="
+                    isPassing(
+                      row.expect.heightStyle,
+                      getVals(row.test).heightStyle
+                    )
+                  "
+                >
+                  <span class="nn-label nn-gold-tips">
+                    <nn-icon glyph="star" />
+                  </span>
+                </template>
+                <template v-else>
+                  <span class="nn-label nn-persian-red">
+                    <nn-icon glyph="times" />
+                  </span>
+                </template>
+              </nn-column>
+            </nn-row>
 
-              <nn-column size="200">has css width class:</nn-column>
-              <nn-column size="1/2-150">{{
-                row.expect.hasCSSWidthClass
-              }}</nn-column>
-              <nn-column size="1/2-150">{{
-                getVals(row.test).hasCSSWidthClass
-              }}</nn-column>
-              <nn-column size="100">
-                {{
-                  isPassing(
-                    row.expect.hasCSSWidthClass,
-                    getVals(row.test).hasCSSWidthClass
-                  )
-                }}
+            <nn-row>
+              <nn-column size="200">
+                <span class="nn-label nn-gravel">Width Calculation</span>
+              </nn-column>
+              <nn-column size="1/2-115">
+                <span class="nn-label">
+                  {{ row.expect.widthCalc || "--" }}
+                </span>
+              </nn-column>
+              <nn-column size="1/2-120">
+                <span class="nn-label">
+                  {{ getVals(row.test).widthCalc || "--" }}
+                </span>
+              </nn-column>
+              <nn-column size="35">
+                <template
+                  v-if="
+                    isPassing(row.expect.widthCalc, getVals(row.test).widthCalc)
+                  "
+                >
+                  <span class="nn-label nn-gold-tips">
+                    <nn-icon glyph="star" />
+                  </span>
+                </template>
+                <template v-else>
+                  <span class="nn-label nn-persian-red">
+                    <nn-icon glyph="times" />
+                  </span>
+                </template>
+              </nn-column>
+            </nn-row>
+
+            <nn-row>
+              <nn-column size="200">
+                <span class="nn-label nn-gravel">Height Calculation</span>
+              </nn-column>
+              <nn-column size="1/2-115">
+                <span class="nn-label">
+                  {{ row.expect.heightCalc || "--" }}
+                </span>
+              </nn-column>
+              <nn-column size="1/2-120">
+                <span class="nn-label">
+                  {{ getVals(row.test).heightCalc || "--" }}
+                </span>
+              </nn-column>
+              <nn-column size="35">
+                <template
+                  v-if="
+                    isPassing(
+                      row.expect.heightCalc,
+                      getVals(row.test).heightCalc
+                    )
+                  "
+                >
+                  <span class="nn-label nn-gold-tips">
+                    <nn-icon glyph="star" />
+                  </span>
+                </template>
+                <template v-else>
+                  <span class="nn-label nn-persian-red">
+                    <nn-icon glyph="times" />
+                  </span>
+                </template>
               </nn-column>
             </nn-row>
           </article>
@@ -99,7 +223,8 @@ export default {
           width: "nn-w-p65",
           widthStyle: undefined,
           heightStyle: "height: 0px",
-          hasCSSWidthClass: true,
+          widthCalc: "65px",
+          heightCalc: "0px",
         },
       },
       {
@@ -109,7 +234,8 @@ export default {
           width: "nn-w-m0",
           widthStyle: undefined,
           heightStyle: "height: 65px",
-          hasCSSWidthClass: true,
+          widthCalc: "0px",
+          heightCalc: "65px",
         },
       },
       {
@@ -119,7 +245,8 @@ export default {
           width: undefined,
           widthStyle: "flex-basis: 11px; max-width: 11px",
           heightStyle: "height: 15px",
-          hasCSSWidthClass: false,
+          widthCalc: "11px",
+          heightCalc: "15px",
         },
       },
       {
@@ -129,7 +256,8 @@ export default {
           width: undefined,
           widthStyle: undefined,
           heightStyle: undefined,
-          hasCSSWidthClass: false,
+          widthCalc: undefined,
+          heightCalc: undefined,
         },
       },
       {
@@ -139,7 +267,8 @@ export default {
           width: "nn-w-n1d4-m250",
           widthStyle: undefined,
           heightStyle: undefined,
-          hasCSSWidthClass: true,
+          widthCalc: "calc(25% - 250px)",
+          heightCalc: undefined,
         },
       },
       {
@@ -149,7 +278,8 @@ export default {
           width: undefined,
           widthStyle: undefined,
           heightStyle: undefined,
-          hasCSSWidthClass: false,
+          widthCalc: undefined,
+          heightCalc: undefined,
         },
       },
       {
@@ -159,7 +289,8 @@ export default {
           width: "nn-w-n1d2",
           widthStyle: undefined,
           heightStyle: undefined,
-          hasCSSWidthClass: true,
+          widthCalc: "50%",
+          heightCalc: undefined,
         },
       },
       {
@@ -169,7 +300,8 @@ export default {
           width: undefined,
           widthStyle: "flex-basis: 500px; max-width: 500px",
           heightStyle: undefined,
-          hasCSSWidthClass: false,
+          widthCalc: "500px",
+          heightCalc: undefined,
         },
       },
       {
@@ -179,7 +311,8 @@ export default {
           width: undefined,
           widthStyle: undefined,
           heightStyle: "height: 500px",
-          hasCSSWidthClass: false,
+          widthCalc: undefined,
+          heightCalc: "500px",
         },
       },
       {
@@ -190,7 +323,8 @@ export default {
           widthStyle:
             "flex-basis: calc(20% + 25px); max-width: calc(20% + 25px)",
           heightStyle: "height: 25px",
-          hasCSSWidthClass: false,
+          widthCalc: "calc(20% + 25px)",
+          heightCalc: "25px",
         },
       },
       {
@@ -200,7 +334,8 @@ export default {
           width: undefined,
           widthStyle: "flex-basis: 18%; max-width: 18%",
           heightStyle: undefined,
-          hasCSSWidthClass: false,
+          widthCalc: "18%",
+          heightCalc: undefined,
         },
       },
       {
@@ -210,7 +345,8 @@ export default {
           width: undefined,
           widthStyle: undefined,
           heightStyle: "height: calc(15% + 140px)",
-          hasCSSWidthClass: false,
+          widthCalc: undefined,
+          heightCalc: "calc(15% + 140px)",
         },
       },
       {
@@ -220,7 +356,8 @@ export default {
           width: undefined,
           widthStyle: undefined,
           heightStyle: "height: calc(15% - 60px)",
-          hasCSSWidthClass: false,
+          widthCalc: undefined,
+          heightCalc: "calc(15% - 60px)",
         },
       },
       {
@@ -230,7 +367,8 @@ export default {
           width: undefined,
           widthStyle: undefined,
           heightStyle: "height: 13%",
-          hasCSSWidthClass: false,
+          widthCalc: undefined,
+          heightCalc: "13%",
         },
       },
       {
@@ -241,7 +379,8 @@ export default {
           widthStyle:
             "flex-basis: calc(15vw + 50px); max-width: calc(15vw + 50px)",
           heightStyle: undefined,
-          hasCSSWidthClass: false,
+          widthCalc: "calc(15vw + 50px)",
+          heightCalc: undefined,
         },
       },
       {
@@ -251,16 +390,15 @@ export default {
           width: undefined,
           widthStyle: undefined,
           heightStyle: "height: calc(15vh + 50px)",
-          hasCSSWidthClass: false,
+          widthCalc: undefined,
+          heightCalc: "calc(15vh + 50px)",
         },
       },
     ],
   }),
-  computed: {},
-  created() {},
   methods: {
     isPassing(a, b) {
-      return a === b ? "passed ⭐" : "failed 🔥";
+      return a === b;
     },
   },
 };

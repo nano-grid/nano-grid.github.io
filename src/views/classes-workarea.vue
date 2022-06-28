@@ -1,7 +1,7 @@
 <template>
   <nn-scroll-area color="royal-purple">
     <nn-container>
-      <div class="nano-box">
+      <div class="nn-box">
         <h1>Available Relative Sizes ({{ cssWidthClasses.length }})</h1>
         <hr />
         <div class="table" role="table">
@@ -37,7 +37,7 @@
         </div>
       </div>
 
-      <div class="nano-box">
+      <div class="nn-box">
         <h1>Available Absolute Sizes (61)</h1>
         <hr />
         <p>
@@ -45,7 +45,7 @@
         </p>
       </div>
 
-      <div class="nano-box">
+      <div class="nn-box">
         <h1>Available Classes ({{ cssWClass.size }})</h1>
         <hr />
         <div class="table" role="table">

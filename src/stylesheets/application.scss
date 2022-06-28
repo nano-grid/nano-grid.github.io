@@ -10,8 +10,12 @@ $nano: "nn-";
 @import "nano-grid-extended/scss/btn-flat";
 @import "nano-grid-extended/scss/btn-nav";
 @import "nano-grid-extended/scss/btn-ghost";
+@import "nano-grid-extended/scss/btn-round";
+@import "nano-grid-extended/scss/btn-outline";
 @import "nano-grid-extended/scss/input";
 @import "nano-grid-extended/scss/label";
+@import "nano-grid-extended/scss/box";
+@import "nano-grid-extended/scss/shade";
 
 @import "nano-grid/scss/nano-grid";
 @import "nano-grid-extended/scss/scroll-area";
@@ -52,7 +56,7 @@ main {
     --color-table-background: hsl(240deg 20% 80% / 0.2);
     --color-table-background-2: hsl(240deg 20% 85% / 0.2);
     --color-table-background-hover: hsl(240deg 35% 90% / 0.2);
-    --map-background: #c88396;
+    --color-nano-box: hsl(240deg 10% 83% / 27%);
   }
   &.nn-dark {
     --color-title: #e69b28;
@@ -71,7 +75,7 @@ main {
     --color-table-background: hsl(240deg 5% 25% / 0.2);
     --color-table-background-2: hsl(240deg 5% 30% / 0.2);
     --color-table-background-hover: hsl(240deg 20% 35% / 0.2);
-    --map-background: #4c2faf;
+    --color-nano-box: hsl(240deg 12% 10% / 27%);
   }
   --title-shadow: 0;
   --color-shadow: rgb(0 0 0 / 65%);
@@ -99,6 +103,8 @@ main {
 @import "components/loading";
 @import "components/toggle-input";
 @import "components/spirit";
+
+@import "views/builder";
 
 @import "core/vue-theme";
 
@@ -128,6 +134,17 @@ main {
   }
 }
 
+.section-tests {
+  .workarea {
+    #{wc("row")} {
+      align-items: stretch;
+      .nn-label {
+        height: 100%;
+      }
+    }
+  }
+}
+
 /*------------------------*/
 .pill-container {
   background-color: rgba(127.5, 127.5, 127.5, 0.2);
@@ -152,18 +169,6 @@ main {
 
 /*------------------------*/
 
-.nano-box {
-  border: 1px solid var(--color-border);
-  border-radius: 5px;
-  padding: 2rem;
-  margin-bottom: 1rem;
-  color: var(--color-foreground);
-  &.inline {
-    padding: 0.5rem;
-    margin-bottom: 0;
-  }
-}
-
 .nano-app {
   .#{$nano}btn.#{$nano}flat {
     &-vue {
@@ -178,16 +183,6 @@ main {
 }
 
 /*------------------------*/
-.nano-shade-box {
-  font-weight: 400;
-  font-size: 11px;
-  letter-spacing: 3px;
-  background-color: rgba(128, 128, 128, 0.2);
-  border-radius: 5px;
-  padding: 0.5rem;
-}
-
-/*------------------------*/
 
 .demo-row {
   margin-bottom: 0;
@@ -196,4 +191,9 @@ main {
     height: 1.25rem;
     background-color: var(--color-label);
   }
+}
+
+hr {
+  border-color: var(--color-border);
+  border-width: 0 0 1px 0;
 }

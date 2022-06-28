@@ -4,39 +4,35 @@
       <nn-container>
         <nn-row vertical>
           <nn-column>
-            <template v-for="nav in navigation">
-              <template v-if="!nav.route.includes($route.name)">
-                <btn
-                  :to="{ name: nav.route[0] }"
-                  :key="nav.route[0]"
-                  mode="nav"
-                  color="shamrock"
-                  size="md"
-                  :title="nav.tooltip"
-                  :glyph="nav.icon"
-                />
-              </template>
-              <template v-else>
-                <btn
-                  :key="nav.route[0]"
-                  mode="nav"
-                  color="shamrock"
-                  size="md"
-                  :title="nav.tooltip"
-                  @click="toggleValue('panel'), playSound()"
-                  :glyph="nav.icon"
-                  active
-                />
-              </template>
+            <template v-for="nav in navigation" :key="nav.route[0]">
+              <btn
+                :to="{ name: nav.route[0] }"
+                mode="nav"
+                color="shamrock"
+                size="md"
+                :title="nav.tooltip"
+                :glyph="nav.icon"
+                :active="nav.route.includes($route.name)"
+              />
             </template>
+             <btn
+                href="https://miguel-rivas.github.io"
+                mode="nav"
+                color="royal-purple"
+                size="md"
+                tag="a"
+                title="Miguel Rivas"
+                glyph="mr-spirit"
+                target="_blank"
+              />
             <hr />
             <btn
               color="gold-tips"
               size="md"
               mode="nav"
               title="Toggle theme button"
-              glyph="brightness"
-              @click="toggleValue('theme'), playSound()"
+              :glyph="theme ? 'sun' : 'moon'"
+              @click.passive="toggleValue('theme'), playSound()"
               :active="theme"
             />
           </nn-column>
@@ -56,22 +52,27 @@ export default {
     navigation: [
       {
         tooltip: "Builder",
-        icon: "monster",
+        icon: "paint-brush",
         route: ["builder"],
       },
       {
-        tooltip: "Classes",
-        icon: "monster",
-        route: ["classes"],
+        tooltip: "Installation",
+        icon: "download",
+        route: ["installation"],
       },
-      // {
-      //   tooltip: "Gallery",
-      //   icon: "monster",
-      //   route: ["gallery"],
-      // },
+      {
+        tooltip: "Sizes",
+        icon: "expand",
+        route: ["sizes"],
+      },
+      {
+        tooltip: "Documentation",
+        icon: "book",
+        route: ["documentation"],
+      },
       {
         tooltip: "Tests",
-        icon: "monster",
+        icon: "flask",
         route: ["tests"],
       },
     ],

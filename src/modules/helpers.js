@@ -1,9 +1,4 @@
-// import { DateTime } from "luxon";
-import { icons } from "../db/icons";
-
 export const nano = "nn-";
-
-// const initialDate = { years: 1990, months: 5, days: 5, hours: 13, };
 
 export const getID = (client, date) => {
   client = client.replace(/[\s./]/g, "").toLowerCase();
@@ -44,10 +39,6 @@ export const titleCase = (label) => {
     .replace(/-/g, " ");
 }
 
-export const getIcon = (icon) => {
-  return String.fromCharCode(hexToDec(icons[icon]));
-}
-
 export const hexToDec = (number) => {
   return parseInt(number, 16);
 }
@@ -55,16 +46,6 @@ export const hexToDec = (number) => {
 export const decToHex = (number) => {
   return (number).toString(16);
 }
-
-// export const turingDate = (date) => {
-//   const newDate = DateTime.fromISO(date.replace(/[/]/g, "-")).minus(initialDate);
-//   return `J${newDate.year} M${newDate.month < 10 ? `0${newDate.month}` : newDate.month} T${newDate.day < 10 ? `0${newDate.day}` : newDate.day}`;
-// }
-
-// export const currentTuringDate = () => {
-//   const newDate = DateTime.now().minus(initialDate);
-//   return `J${newDate.year} M${newDate.month < 10 ? `0${newDate.month}` : newDate.month} T${newDate.day < 10 ? `0${newDate.day}` : newDate.day}`;
-// }
 
 export const dateToNumber = (date) => {
   return parseInt(date.split("/").join(""));
