@@ -6,7 +6,6 @@ import store from "./modules/store";
 import VueKonva from "vue-konva";
 import NanoBtn from '@/components/btn.vue';
 import 'nano-grid/components';
-import 'nano-grid-extended/components';
 import "./stylesheets/application.scss";
 
 const app = createApp(appView);
