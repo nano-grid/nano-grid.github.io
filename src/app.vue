@@ -1,5 +1,5 @@
 <template>
-  <main class="vue-theme" :class="classes">
+  <main :class="classes">
     <nn-row class="nano-app">
       <panel-navigation />
 
@@ -12,12 +12,10 @@
 
 <script>
 import PanelNavigation from "./components/panel-navigation.vue";
-import { playSound } from "./modules/helpers";
 import { mapGetters, mapMutations } from "vuex";
 
 export default {
   data: () => ({
-    playSound,
   }),
   components: {
     PanelNavigation,

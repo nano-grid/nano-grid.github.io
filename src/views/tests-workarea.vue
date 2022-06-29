@@ -1,205 +1,219 @@
 <template>
   <nn-scroll-area color="royal-purple">
     <nn-container>
+      <h1>Tests</h1>
       <div class="nn-box">
-        <h1>getVals(formula: string): object</h1>
-        <hr />
-
+        <h2>getVals(formula: string): object</h2>
         <template v-for="(row, rowIndex) in cases" :key="'rowIndex' + rowIndex">
           <article class="nn-shade">
             <nn-row>
-              <nn-column size="50%">
-                <span class="nn-label nn-desert">{{ row.case }}</span>
+              <nn-column size="100">
+                <span class="nn-label nn-charcoal">Case</span>
               </nn-column>
-              <nn-column size="50%">
-                <span class="nn-label nn-desert">{{ row.test }}</span>
+              <nn-column size="60%">
+                <span class="nn-label nn-mariner">{{ row.case }}</span>
               </nn-column>
-            </nn-row>
-
-            <nn-row>
-              <nn-column size="200">
-                <span class="nn-label nn-denim">Attribute</span>
-              </nn-column>
-
-              <nn-column size="1/2-115">
-                <span class="nn-label nn-denim">Expected</span>
-              </nn-column>
-
-              <nn-column size="1/2-120">
-                <span class="nn-label nn-denim">Returned</span>
-              </nn-column>
-              <nn-column size="35">
-                <span class="nn-label nn-denim"></span>
+              <nn-column size="40%-100">
+                <span class="nn-label nn-mariner">{{ row.test }}</span>
               </nn-column>
             </nn-row>
 
-            <nn-row>
-              <nn-column size="200">
-                <span class="nn-label nn-gravel">Width Class</span>
-              </nn-column>
-              <nn-column size="1/2-115">
-                <span class="nn-label">
-                  {{ row.expect.width || "--" }}
-                </span>
-              </nn-column>
-              <nn-column size="1/2-120">
-                <span class="nn-label">
-                  {{ getVals(row.test).width || "--" }}
-                </span>
-              </nn-column>
-              <nn-column size="35">
-                <template
-                  v-if="isPassing(row.expect.width, getVals(row.test).width)"
-                >
-                  <span class="nn-label nn-gold-tips">
-                    <nn-icon glyph="star" />
-                  </span>
-                </template>
-                <template v-else>
-                  <span class="nn-label nn-persian-red">
-                    <nn-icon glyph="times" />
-                  </span>
-                </template>
-              </nn-column>
-            </nn-row>
+            <br />
 
-            <nn-row>
-              <nn-column size="200">
-                <span class="nn-label nn-gravel">Width Style</span>
-              </nn-column>
-              <nn-column size="1/2-115">
-                <span class="nn-label">
-                  {{ row.expect.widthStyle || "--" }}
-                </span>
-              </nn-column>
+            <div role="table">
+              <div class="table-head" role="rowgroup">
+                <nn-row breakpoint="lg" table-element>
+                  <nn-column table-element size="200">
+                    <span class="nn-label nn-denim">Attribute</span>
+                  </nn-column>
 
-              <nn-column size="1/2-120">
-                <span class="nn-label">
-                  {{ getVals(row.test).widthStyle || "--" }}
-                </span>
-              </nn-column>
-              <nn-column size="35">
-                <template
-                  v-if="
-                    isPassing(
-                      row.expect.widthStyle,
-                      getVals(row.test).widthStyle
-                    )
-                  "
-                >
-                  <span class="nn-label nn-gold-tips">
-                    <nn-icon glyph="star" />
-                  </span>
-                </template>
-                <template v-else>
-                  <span class="nn-label nn-persian-red">
-                    <nn-icon glyph="times" />
-                  </span>
-                </template>
-              </nn-column>
-            </nn-row>
+                  <nn-column table-element size="1/2-115">
+                    <span class="nn-label nn-denim">Expected</span>
+                  </nn-column>
 
-            <nn-row>
-              <nn-column size="200">
-                <span class="nn-label nn-gravel">Height Style</span>
-              </nn-column>
-              <nn-column size="1/2-115">
-                <span class="nn-label">
-                  {{ row.expect.heightStyle || "--" }}
-                </span>
-              </nn-column>
-              <nn-column size="1/2-120">
-                <span class="nn-label">
-                  {{ getVals(row.test).heightStyle || "--" }}
-                </span>
-              </nn-column>
-              <nn-column size="35">
-                <template
-                  v-if="
-                    isPassing(
-                      row.expect.heightStyle,
-                      getVals(row.test).heightStyle
-                    )
-                  "
-                >
-                  <span class="nn-label nn-gold-tips">
-                    <nn-icon glyph="star" />
-                  </span>
-                </template>
-                <template v-else>
-                  <span class="nn-label nn-persian-red">
-                    <nn-icon glyph="times" />
-                  </span>
-                </template>
-              </nn-column>
-            </nn-row>
+                  <nn-column table-element size="1/2-120">
+                    <span class="nn-label nn-denim">Returned</span>
+                  </nn-column>
+                  <nn-column table-element size="35">
+                    <span class="nn-label nn-denim"></span>
+                  </nn-column>
+                </nn-row>
+              </div>
+              <div class="table-body" role="rowgroup">
+                <nn-row breakpoint="lg" table-element>
+                  <nn-column table-element size="200">
+                    <span class="nn-label nn-gravel">Width Class</span>
+                  </nn-column>
+                  <nn-column table-element size="1/2-115">
+                    <span class="nn-label">
+                      {{ row.expect.width || "undefined" }}
+                    </span>
+                  </nn-column>
+                  <nn-column table-element size="1/2-120">
+                    <span class="nn-label">
+                      {{ getVals(row.test).width || "undefined" }}
+                    </span>
+                  </nn-column>
+                  <nn-column table-element size="35">
+                    <template
+                      v-if="
+                        isPassing(row.expect.width, getVals(row.test).width)
+                      "
+                    >
+                      <span class="nn-label nn-gold-tips">
+                        <nn-icon glyph="star" />
+                      </span>
+                    </template>
+                    <template v-else>
+                      <span class="nn-label nn-persian-red">
+                        <nn-icon glyph="times" />
+                      </span>
+                    </template>
+                  </nn-column>
+                </nn-row>
 
-            <nn-row>
-              <nn-column size="200">
-                <span class="nn-label nn-gravel">Width Calculation</span>
-              </nn-column>
-              <nn-column size="1/2-115">
-                <span class="nn-label">
-                  {{ row.expect.widthCalc || "--" }}
-                </span>
-              </nn-column>
-              <nn-column size="1/2-120">
-                <span class="nn-label">
-                  {{ getVals(row.test).widthCalc || "--" }}
-                </span>
-              </nn-column>
-              <nn-column size="35">
-                <template
-                  v-if="
-                    isPassing(row.expect.widthCalc, getVals(row.test).widthCalc)
-                  "
-                >
-                  <span class="nn-label nn-gold-tips">
-                    <nn-icon glyph="star" />
-                  </span>
-                </template>
-                <template v-else>
-                  <span class="nn-label nn-persian-red">
-                    <nn-icon glyph="times" />
-                  </span>
-                </template>
-              </nn-column>
-            </nn-row>
+                <nn-row breakpoint="lg" table-element>
+                  <nn-column table-element size="200">
+                    <span class="nn-label nn-gravel">Width Style</span>
+                  </nn-column>
+                  <nn-column table-element size="1/2-115">
+                    <span class="nn-label">
+                      {{ row.expect.widthStyle || "undefined" }}
+                    </span>
+                  </nn-column>
 
-            <nn-row>
-              <nn-column size="200">
-                <span class="nn-label nn-gravel">Height Calculation</span>
-              </nn-column>
-              <nn-column size="1/2-115">
-                <span class="nn-label">
-                  {{ row.expect.heightCalc || "--" }}
-                </span>
-              </nn-column>
-              <nn-column size="1/2-120">
-                <span class="nn-label">
-                  {{ getVals(row.test).heightCalc || "--" }}
-                </span>
-              </nn-column>
-              <nn-column size="35">
-                <template
-                  v-if="
-                    isPassing(
-                      row.expect.heightCalc,
-                      getVals(row.test).heightCalc
-                    )
-                  "
-                >
-                  <span class="nn-label nn-gold-tips">
-                    <nn-icon glyph="star" />
-                  </span>
-                </template>
-                <template v-else>
-                  <span class="nn-label nn-persian-red">
-                    <nn-icon glyph="times" />
-                  </span>
-                </template>
-              </nn-column>
-            </nn-row>
+                  <nn-column table-element size="1/2-120">
+                    <span class="nn-label">
+                      {{ getVals(row.test).widthStyle || "undefined" }}
+                    </span>
+                  </nn-column>
+                  <nn-column table-element size="35">
+                    <template
+                      v-if="
+                        isPassing(
+                          row.expect.widthStyle,
+                          getVals(row.test).widthStyle
+                        )
+                      "
+                    >
+                      <span class="nn-label nn-gold-tips">
+                        <nn-icon glyph="star" />
+                      </span>
+                    </template>
+                    <template v-else>
+                      <span class="nn-label nn-persian-red">
+                        <nn-icon glyph="times" />
+                      </span>
+                    </template>
+                  </nn-column>
+                </nn-row>
+
+                <nn-row breakpoint="lg" table-element>
+                  <nn-column table-element size="200">
+                    <span class="nn-label nn-gravel">Height Style</span>
+                  </nn-column>
+                  <nn-column table-element size="1/2-115">
+                    <span class="nn-label">
+                      {{ row.expect.heightStyle || "undefined" }}
+                    </span>
+                  </nn-column>
+                  <nn-column table-element size="1/2-120">
+                    <span class="nn-label">
+                      {{ getVals(row.test).heightStyle || "undefined" }}
+                    </span>
+                  </nn-column>
+                  <nn-column table-element size="35">
+                    <template
+                      v-if="
+                        isPassing(
+                          row.expect.heightStyle,
+                          getVals(row.test).heightStyle
+                        )
+                      "
+                    >
+                      <span class="nn-label nn-gold-tips">
+                        <nn-icon glyph="star" />
+                      </span>
+                    </template>
+                    <template v-else>
+                      <span class="nn-label nn-persian-red">
+                        <nn-icon glyph="times" />
+                      </span>
+                    </template>
+                  </nn-column>
+                </nn-row>
+
+                <nn-row breakpoint="lg" table-element>
+                  <nn-column table-element size="200">
+                    <span class="nn-label nn-gravel">Width Calculation</span>
+                  </nn-column>
+                  <nn-column table-element size="1/2-115">
+                    <span class="nn-label">
+                      {{ row.expect.widthCalc || "undefined" }}
+                    </span>
+                  </nn-column>
+                  <nn-column table-element size="1/2-120">
+                    <span class="nn-label">
+                      {{ getVals(row.test).widthCalc || "undefined" }}
+                    </span>
+                  </nn-column>
+                  <nn-column table-element size="35">
+                    <template
+                      v-if="
+                        isPassing(
+                          row.expect.widthCalc,
+                          getVals(row.test).widthCalc
+                        )
+                      "
+                    >
+                      <span class="nn-label nn-gold-tips">
+                        <nn-icon glyph="star" />
+                      </span>
+                    </template>
+                    <template v-else>
+                      <span class="nn-label nn-persian-red">
+                        <nn-icon glyph="times" />
+                      </span>
+                    </template>
+                  </nn-column>
+                </nn-row>
+
+                <nn-row breakpoint="lg" table-element>
+                  <nn-column table-element size="200">
+                    <span class="nn-label nn-gravel">Height Calculation</span>
+                  </nn-column>
+                  <nn-column table-element size="1/2-115">
+                    <span class="nn-label">
+                      {{ row.expect.heightCalc || "undefined" }}
+                    </span>
+                  </nn-column>
+                  <nn-column table-element size="1/2-120">
+                    <span class="nn-label">
+                      {{ getVals(row.test).heightCalc || "undefined" }}
+                    </span>
+                  </nn-column>
+                  <nn-column table-element size="35">
+                    <template
+                      v-if="
+                        isPassing(
+                          row.expect.heightCalc,
+                          getVals(row.test).heightCalc
+                        )
+                      "
+                    >
+                      <span class="nn-label nn-gold-tips">
+                        <nn-icon glyph="star" />
+                      </span>
+                    </template>
+                    <template v-else>
+                      <span class="nn-label nn-persian-red">
+                        <nn-icon glyph="times" />
+                      </span>
+                    </template>
+                  </nn-column>
+                </nn-row>
+              </div>
+            </div>
           </article>
           <br />
         </template>

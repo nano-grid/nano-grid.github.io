@@ -1,10 +1,8 @@
 <template>
   <nn-scroll-area color="royal-purple">
     <nn-container>
+      <h1>Installation</h1>
       <div class="nn-box">
-        <h1>Installation</h1>
-        <hr />
-        <br />
         <nn-row>
           <nn-column size="1/2">
             <btn
@@ -38,8 +36,30 @@
 
         <br />
 
+        <div class="nn-shade">
+          <h2>-- Registering components</h2>
+          <p class="nn-label">[ app | index | main ].( j | t ) sx?</p>
+          <spirit lang="js" :text="spirit.webComponent.install" />
+          <h2>-- Using the components</h2>
+          <spirit lang="html" :text="spirit.webComponent.example" />
+
+          <h2>-- Preview</h2>
+          <nn-row>
+            <nn-column size="3/4">
+              <span class="nn-label nn-denim">75%</span>
+            </nn-column>
+            <nn-column size="1/4">
+              <span class="nn-label nn-persian-red">25%</span>
+            </nn-column>
+          </nn-row>
+        </div>
+
+        <br />
+
+         <h2>Alternative to web components</h2>
+
         <nn-row>
-          <nn-column size="1/5">
+          <nn-column size="1/4">
             <btn
               mode="flat"
               text="Vue 2"
@@ -47,7 +67,7 @@
               @click="changeCode('vue2')"
             />
           </nn-column>
-          <nn-column size="1/5">
+          <nn-column size="1/4">
             <btn
               mode="flat"
               text="Vue 3"
@@ -55,7 +75,7 @@
               @click="changeCode('vue3')"
             />
           </nn-column>
-          <nn-column size="1/5">
+          <nn-column size="1/4">
             <btn
               mode="flat"
               text="Svelte 3"
@@ -63,20 +83,12 @@
               @click="changeCode('svelte3')"
             />
           </nn-column>
-          <nn-column size="1/5">
+          <nn-column size="1/4">
             <btn
               mode="flat"
               text="React 17"
               :color="spirit.current === 'react17' ? 'cobalt-blue' : 'charcoal'"
               @click="changeCode('react17')"
-            />
-          </nn-column>
-          <nn-column size="1/5">
-            <btn
-              mode="flat"
-              text="Web Component"
-              :color="spirit.current === 'webComponent' ? 'denim' : 'charcoal'"
-              @click="changeCode('webComponent')"
             />
           </nn-column>
         </nn-row>
@@ -124,19 +136,6 @@
             <spirit lang="html" :text="spirit.svelte3.example" />
           </template>
 
-          <template v-else-if="spirit.current === 'webComponent'">
-            <p>JS Code</p>
-            <spirit lang="js" :text="spirit.webComponent.js" />
-            <h2>-- Row Component</h2>
-            <p>JS Code</p>
-            <spirit lang="js" :text="spirit.webComponent.rowJs" />
-            <h2>-- Registering components</h2>
-            <p>[ app | index | main ].[ js | ts ]</p>
-            <spirit lang="js" :text="spirit.webComponent.install" />
-            <h2>-- Using the components</h2>
-            <spirit lang="html" :text="spirit.webComponent.example" />
-          </template>
-
           <template v-else-if="spirit.current === 'react17'">
             <p>JS Code</p>
             <spirit lang="react" :text="spirit.react17.js" />
@@ -148,16 +147,6 @@
             <h2>-- Using the components</h2>
             <spirit lang="html" :text="spirit.react17.example" />
           </template>
-
-          <h2>-- Preview</h2>
-          <nn-row>
-            <nn-column size="3/4">
-              <btn text="75%" color="denim" />
-            </nn-column>
-            <nn-column size="1/4">
-              <btn text="25%" color="persian-red" />
-            </nn-column>
-          </nn-row>
         </div>
       </div>
     </nn-container>

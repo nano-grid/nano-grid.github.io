@@ -1,15 +1,22 @@
 <template>
   <nn-scroll-area color="royal-purple">
     <nn-container>
+      <h1>Grid System</h1>
+
       <div class="nn-box">
-        <h1>Available Relative Sizes ({{ cssWidthClasses.length }})</h1>
-        <hr />
-        <div class="table" role="table">
+        <h2>Available Relative Sizes ({{ cssWidthClasses.length }})</h2>
+        <div role="table">
           <div class="table-head" role="rowgroup">
-            <nn-row breakpoint="lg">
-              <nn-column size="1/3">Size</nn-column>
-              <nn-column size="1/3">Percent (Aprox)</nn-column>
-              <nn-column size="1/3">Preview</nn-column>
+            <nn-row table-element breakpoint="lg">
+              <nn-column table-element size="1/3">
+                <span class="nn-label nn-charcoal">Size</span>
+              </nn-column>
+              <nn-column table-element size="1/3">
+                <span class="nn-label nn-charcoal">Percent (Aprox)</span>
+              </nn-column>
+              <nn-column table-element size="1/3">
+                <span class="nn-label nn-charcoal">Preview</span>
+              </nn-column>
             </nn-row>
           </div>
           <div class="table-body" role="rowgroup">
@@ -17,17 +24,21 @@
               v-for="(size, sizeIndex) in cssWidthClasses"
               :key="'sizeIndex' + sizeIndex"
             >
-              <nn-row breakpoint="lg">
-                <nn-column size="1/3">
-                  {{ size }}
+              <nn-row table-element breakpoint="lg">
+                <nn-column table-element size="1/3">
+                  <span class="nn-label">
+                    {{ size }}
+                  </span>
                 </nn-column>
-                <nn-column size="1/3">
-                  {{ class2Value(size) }}
+                <nn-column table-element size="1/3">
+                  <span class="nn-label">
+                    {{ class2Value(size) }}
+                  </span>
                 </nn-column>
-                <nn-column size="1/3">
+                <nn-column table-element size="1/3">
                   <nn-row class="demo-row">
                     <nn-column :size="size">
-                      <span class="fake-btn" />
+                      <span class="nn-label nn-royal-purple" />
                     </nn-column>
                   </nn-row>
                 </nn-column>
@@ -38,23 +49,29 @@
       </div>
 
       <div class="nn-box">
-        <h1>Available Absolute Sizes (61)</h1>
-        <hr />
+        <h2>Available Absolute Sizes (61)</h2>
         <p>
           Values between 0 and 300 that return an integer when divided by 5.
         </p>
       </div>
 
       <div class="nn-box">
-        <h1>Available Classes ({{ cssWClass.size }})</h1>
-        <hr />
-        <div class="table" role="table">
+        <h2>Available Classes ({{ cssWClass.size }})</h2>
+        <div role="table">
           <div class="table-head" role="rowgroup">
             <nn-row breakpoint="lg">
-              <nn-column size="1/4">Class</nn-column>
-              <nn-column size="1/4">Formula</nn-column>
-              <nn-column size="1/4">Value</nn-column>
-              <nn-column size="1/4">Preview</nn-column>
+              <nn-column size="1/4">
+                <span class="nn-label nn-charcoal">Class</span>
+              </nn-column>
+              <nn-column size="1/4">
+                <span class="nn-label nn-charcoal">Formula</span>
+              </nn-column>
+              <nn-column size="1/4">
+                <span class="nn-label nn-charcoal">Value</span>
+              </nn-column>
+              <nn-column size="1/4">
+                <span class="nn-label nn-charcoal">Preview</span>
+              </nn-column>
             </nn-row>
           </div>
           <div class="table-body" role="rowgroup">
@@ -64,22 +81,29 @@
             >
               <nn-row breakpoint="lg">
                 <nn-column size="1/4">
-                  {{ klass }}
+                  <span class="nn-label">
+                    {{ klass }}
+                  </span>
                 </nn-column>
                 <nn-column size="1/4">
-                  {{ class2Formula(klass) }}
-                  <template
-                    v-if="class2Formula(klass) !== class2Formula2(klass)"
-                    >&nbsp;||&nbsp; {{ class2Formula2(klass) }}</template
-                  >
+                  <span class="nn-label">
+                    {{ class2Formula(klass) }}
+                    <template
+                      v-if="class2Formula(klass) !== class2Formula2(klass)"
+                    >
+                      &nbsp;||&nbsp; {{ class2Formula2(klass) }}
+                    </template>
+                  </span>
                 </nn-column>
                 <nn-column size="1/4">
-                  {{ class2Value(klass) }}
+                  <span class="nn-label">
+                    {{ class2Value(klass) }}
+                  </span>
                 </nn-column>
                 <nn-column size="1/4">
                   <nn-row class="demo-row">
                     <nn-column :size="class2Formula(klass)">
-                      <span class="fake-btn" />
+                      <span class="nn-label nn-blush" />
                     </nn-column>
                   </nn-row>
                 </nn-column>
@@ -102,34 +126,29 @@
                     color="gold-tips"
                   />
                 </nn-column>
-                 <nn-column size="1/3">
-                  <btn
-                    :text="
-                      '( ' +
+                <nn-column size="1/3">
+                  <span class="nn-label">
+                    {{
+                      "( " +
                       availableClassesLimit +
-                      ' of ' +
+                      " of " +
                       cssWClass.size +
-                      ' )'
-                    "
-                    title="All Rows"
-                    
-                    disabled
-                  />
+                      " )"
+                    }}
+                  </span>
                 </nn-column>
               </template>
               <template v-else>
                 <nn-column size="1/1">
-                  <btn
-                    :text="
-                      '( ' +
+                  <span class="nn-label">
+                    {{
+                      "( " +
                       availableClassesLimit +
-                      ' of ' +
+                      " of " +
                       cssWClass.size +
-                      ' )'
-                    "
-                    title="All Rows"
-                    disabled
-                  />
+                      " )"
+                    }}
+                  </span>
                 </nn-column>
               </template>
             </nn-row>

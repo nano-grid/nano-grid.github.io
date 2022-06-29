@@ -29,10 +29,6 @@ export default {
       type: String,
       default: "",
     },
-    size: {
-      type: String,
-      default: "",
-    },
     text: {
       type: [String, Number],
       default: undefined,
@@ -43,7 +39,7 @@ export default {
     },
     color: {
       type: String,
-      default: "transparent",
+      default: "",
     },
     active: {
       type: Boolean,
@@ -59,6 +55,10 @@ export default {
     mode: {
       type: String,
       default: "flat",
+    },
+    round: {
+      type: Boolean,
+      default: false,
     },
   },
   computed: {
@@ -107,9 +107,9 @@ export default {
       return [
         this.buttonType,
         this.itemColor,
-        `nn-${this.size}`,
         {
           "nn-active": this.active,
+          "nn-round": this.round,
         },
       ];
     },

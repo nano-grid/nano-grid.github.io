@@ -14,6 +14,7 @@
           <template v-for="(row, rowIndex) in grid" :key="'row-' + rowIndex">
             <nn-column :size="row.size">
               <btn
+                :round="rowSettings.round"
                 :mode="rowSettings.mode"
                 :color="row.color"
                 :text="'' + (rowIndex + 1)"
@@ -32,7 +33,7 @@
               <nn-column size="100%">
                 <btn
                   text="Group"
-                  color="shamrock"
+                  color="burn-orange"
                   :active="rowSettings.group"
                   @click.passive="toggleRowSettings('group')"
                 />
@@ -42,7 +43,7 @@
               <nn-column size="100%">
                 <btn
                   text="Grid"
-                  color="shamrock"
+                  color="burn-orange"
                   :active="rowSettings.grid"
                   @click.passive="toggleRowSettings('grid')"
                 />
@@ -52,13 +53,17 @@
               <nn-column size="100%">
                 <btn
                   text="Vertical"
-                  color="shamrock"
+                  color="burn-orange"
                   :active="rowSettings.vertical"
                   @click.passive="toggleRowSettings('vertical')"
                 />
               </nn-column>
             </nn-row>
-            <nn-row v-if="hideForProduction && !rowSettings.vertical && !rowSettings.grid">
+            <nn-row
+              v-if="
+                hideForProduction && !rowSettings.vertical && !rowSettings.grid
+              "
+            >
               <nn-column size="100%-50">
                 <input
                   type="range"
@@ -84,27 +89,18 @@
               <nn-column size="100%">
                 <btn
                   text="Flat"
-                  color="shamrock"
+                  color="gold-tips"
                   :active="rowSettings.mode === 'flat'"
                   @click.passive="switchMode('flat')"
                 />
               </nn-column>
             </nn-row>
-            <nn-row>
-              <nn-column size="100%">
-                <btn
-                  text="Round"
-                  color="shamrock"
-                  :active="rowSettings.mode === 'round'"
-                  @click.passive="switchMode('round')"
-                />
-              </nn-column>
-            </nn-row>
+
             <nn-row>
               <nn-column size="100%">
                 <btn
                   text="Ghost"
-                  color="shamrock"
+                  color="gold-tips"
                   :active="rowSettings.mode === 'ghost'"
                   @click.passive="switchMode('ghost')"
                 />
@@ -114,14 +110,38 @@
               <nn-column size="100%">
                 <btn
                   text="Outline"
-                  color="shamrock"
+                  color="gold-tips"
                   :active="rowSettings.mode === 'outline'"
                   @click.passive="switchMode('outline')"
                 />
               </nn-column>
             </nn-row>
+            <nn-row>
+              <nn-column size="100%">
+                <btn
+                  text="Nav"
+                  color="gold-tips"
+                  :active="rowSettings.mode === 'nav'"
+                  @click.passive="switchMode('nav')"
+                />
+              </nn-column>
+            </nn-row>
 
             <hr />
+
+            <nn-row>
+              <nn-column size="100%">
+                <btn
+                  text="Round"
+                  color="burn-orange"
+                  :active="rowSettings.round"
+                  @click.passive="toggleRowSettings('round')"
+                />
+              </nn-column>
+            </nn-row>
+
+            <hr />
+
             <nn-row>
               <nn-column size="100%">
                 <btn
@@ -172,12 +192,24 @@
                 />
               </nn-column>
             </nn-row>
+            <nn-row>
+              <nn-column size="100%">
+                <btn
+                  text="All Colors"
+                  color="gold-tips"
+                  :active="isSimilarObject('all')"
+                  @click.passive="setGrid(def.all)"
+                />
+              </nn-column>
+            </nn-row>
+            
             <hr />
+            
             <nn-row>
               <nn-column size="100%">
                 <btn
                   text="+ Add column"
-                  color="shamrock"
+                  color="burn-orange"
                   @click.passive="addRow()"
                 />
               </nn-column>
@@ -198,6 +230,7 @@
                       <btn
                         title="Remove Column"
                         :color="rowController.color"
+                        :round="rowSettings.round"
                         :text="rowCIndex + 1"
                         :mode="rowSettings.mode"
                         @click.passive="removeRow(rowCIndex)"
@@ -207,9 +240,9 @@
 
                   <nn-row>
                     <nn-column size="70">
-                      <label :for="`size-${rowCIndex}`" class="nn-label"
-                        >Size:</label
-                      >
+                      <label :for="`size-${rowCIndex}`" class="nn-label">
+                        Size:
+                      </label>
                     </nn-column>
 
                     <nn-column size="100%-70">
@@ -224,9 +257,9 @@
 
                   <nn-row>
                     <nn-column size="70">
-                      <label :for="`color-${rowCIndex}`" class="nn-label"
-                        >Color:</label
-                      >
+                      <label :for="`color-${rowCIndex}`" class="nn-label">
+                        Color:
+                      </label>
                     </nn-column>
 
                     <nn-column size="100%-70">
@@ -273,6 +306,7 @@ export default {
       mode: "flat",
       spacing: 0,
       grid: false,
+      round: false,
     },
     hideForProduction: false,
   }),

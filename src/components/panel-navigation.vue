@@ -15,16 +15,6 @@
                 :active="nav.route.includes($route.name)"
               />
             </template>
-             <btn
-                href="https://miguel-rivas.github.io"
-                mode="nav"
-                color="royal-purple"
-                size="md"
-                tag="a"
-                title="Miguel Rivas"
-                glyph="mr-spirit"
-                target="_blank"
-              />
             <hr />
             <btn
               color="gold-tips"
@@ -32,7 +22,7 @@
               mode="nav"
               title="Toggle theme button"
               :glyph="theme ? 'sun' : 'moon'"
-              @click.passive="toggleValue('theme'), playSound()"
+              @click.passive="toggleValue('theme')"
               :active="theme"
             />
           </nn-column>
@@ -44,7 +34,6 @@
 
 <script>
 import { mapGetters, mapMutations } from "vuex";
-import { playSound } from "../modules/helpers";
 
 export default {
   components: {},
@@ -75,8 +64,12 @@ export default {
         icon: "flask",
         route: ["tests"],
       },
+      {
+        tooltip: "About",
+        icon: "mr-spirit",
+        route: ["about"],
+      },
     ],
-    playSound,
   }),
   computed: {
     ...mapGetters({

@@ -3,6 +3,7 @@ import ClassesWorkareaView from '../views/classes-workarea.vue';
 import DictionaryWorkareaView from '../views/dictionary-workarea.vue';
 import DocumentationWorkareaView from '../views/documentation-workarea.vue';
 import TestsWorkareaView from '../views/tests-workarea.vue';
+import AboutWorkareaView from '../views/about-workarea.vue';
 import { createRouter, createWebHistory } from 'vue-router';
 
 const routes = [
@@ -43,6 +44,13 @@ const routes = [
     name: 'tests',
     components: {
       workarea: TestsWorkareaView,
+    },
+  },
+  {
+    path: '/about',
+    name: 'about',
+    components: {
+      workarea: AboutWorkareaView,
     },
   },
 ]

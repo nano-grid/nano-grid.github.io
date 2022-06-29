@@ -1,14 +1,4 @@
-export const breakpointsType = [
-  "",
-  "sm",
-  "md",
-  "lg",
-  "xl",
-  "xll",
-];
-
 export const colorsType = [
-  "",
   "silver",
   "royal-purple",
   "persian-red",
@@ -40,7 +30,6 @@ export const colorsType = [
   "fuchsia",
   "blue-violet",
   "purple-heart",
-  "transparent",
 ];
 
 export const directionsType = [
@@ -48,24 +37,4 @@ export const directionsType = [
   "down",
   "left",
   "right",
-];
-
-export const spacingType = [
-  0,
-  25,
-  50,
-  75,
-  100,
-  125,
-  150,
-  175,
-  200,
-  225,
-  250,
-  275,
-  300,
-  325,
-  350,
-  375,
-  400,
 ];
