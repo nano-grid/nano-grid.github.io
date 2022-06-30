@@ -69,7 +69,10 @@
           </nn-column>
         </nn-row>
 
-        <spirit />
+        <spirit
+          :text="installBox.mode[installBox.selected].example"
+          :lang="installBox.mode[installBox.selected].mode"
+        />
 
         <nn-row class="install">
           <nn-column size="100%-75*2">
@@ -122,7 +125,7 @@
           </nn-row>
         </div>
 
-        <hr>
+        <hr />
 
         <nn-row class="nn-shade">
           <nn-column size="1/4">
@@ -184,7 +187,7 @@
                 </nn-column>
               </nn-row>
 
-              <hr>
+              <hr />
               <div class="nn-label">Button Settings</div>
               <nn-row>
                 <nn-column size="100%">
@@ -399,6 +402,7 @@ import { gColorsDB } from "../db/colors";
 import def from "../db/grid-settings";
 import logo from "../components/logo.vue";
 import nanoFooter from "../components/footer.vue";
+import installBoxMode from "../db/install-box";
 
 export default {
   components: { Spirit, logo, nanoFooter },
@@ -418,6 +422,7 @@ export default {
     hideForProduction: false,
     installBox: {
       selected: "webComponent",
+      mode: installBoxMode,
     },
     timer: undefined,
   }),
@@ -427,7 +432,7 @@ export default {
       this.animateTitle = !this.animateTitle;
     }, 10000);
   },
-  beforeUnmount(){
+  beforeUnmount() {
     clearInterval(this.timer);
   },
   computed: {
