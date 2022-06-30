@@ -1,7 +1,9 @@
 <template>
   <nn-scroll-area color="royal-purple">
     <nn-container>
-      <h1>Tests</h1>
+      <header>
+        <h1>Tests</h1>
+      </header>
       <div class="nn-box">
         <h2>getVals(formula: string): object</h2>
         <template v-for="(row, rowIndex) in cases" :key="'rowIndex' + rowIndex">

@@ -1,7 +1,9 @@
 <template>
   <nn-scroll-area color="royal-purple">
     <nn-container>
-      <h1>Installation</h1>
+      <header>
+        <h1>Installation</h1>
+      </header>
       <div class="nn-box">
         <nn-row>
           <nn-column size="1/2">
@@ -38,7 +40,6 @@
 
         <div class="nn-shade">
           <h2>-- Registering components</h2>
-          <p class="nn-label">[ app | index | main ].( j | t ) sx?</p>
           <spirit lang="js" :text="spirit.webComponent.install" />
           <h2>-- Using the components</h2>
           <spirit lang="html" :text="spirit.webComponent.example" />

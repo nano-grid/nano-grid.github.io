@@ -1,7 +1,9 @@
 <template>
   <nn-scroll-area color="royal-purple">
     <nn-container>
-      <h1>Documentation</h1>
+      <header>
+        <h1>Documentation</h1>
+      </header>
       <div class="nn-box">
         <div class="table" role="table">
           <div class="table-head" role="rowgroup">

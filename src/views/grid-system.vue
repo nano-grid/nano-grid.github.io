@@ -1,7 +1,9 @@
 <template>
   <nn-scroll-area color="royal-purple">
     <nn-container>
-      <h1>Grid System</h1>
+      <header>
+        <h1>Grid System</h1>
+      </header>
 
       <div class="nn-box">
         <h2>Available Relative Sizes ({{ cssWidthClasses.length }})</h2>
