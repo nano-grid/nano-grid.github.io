@@ -218,15 +218,18 @@
           <br />
         </template>
       </div>
+
+      <nano-footer />
     </nn-container>
   </nn-scroll-area>
 </template>
 
 <script>
 import { getVals } from "nano-grid/modules/columns-manager";
+import nanoFooter from "../components/footer.vue";
 
 export default {
-  components: {},
+  components: { nanoFooter },
   data: () => ({
     getVals,
     cases: [

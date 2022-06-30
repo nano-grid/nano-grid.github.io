@@ -1,0 +1,48 @@
+footer {
+  text-align: center;
+
+  p {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  a {
+    color: var(--color-title);
+    text-decoration: none;
+    font-weight: 700;
+  }
+
+  .heart {
+    position: relative;
+    transform: rotate(45deg);
+    margin-inline: 0.25rem;
+    animation: beating-heart 0.2s linear infinite alternate;
+
+    &:before {
+      top: -50%;
+      left: 0;
+    }
+
+    &:after {
+      top: 0;
+      left: -50%;
+    }
+
+    &:before,
+    &::after {
+      content: "";
+      position: absolute;
+      border-radius: 50%;
+    }
+
+    &,
+    &:before,
+    &:after {
+      display: inline-block;
+      background-color: #d73333;
+      width: 0.5rem;
+      height: 0.5rem;
+    }
+  }
+}

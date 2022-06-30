@@ -155,14 +155,18 @@
           </div>
         </div>
       </div>
+
+      <nano-footer />
     </nn-container>
   </nn-scroll-area>
 </template>
 
 <script>
 import { cssWClass, cssWidthClasses } from "nano-grid/modules/columns-manager";
+import nanoFooter from "../components/footer.vue";
 
 export default {
+  components: { nanoFooter },
   data: () => ({
     cssWClass,
     cssWidthClasses,

@@ -27,13 +27,17 @@
           </div>
         </div>
       </div>
+
+      <nano-footer />
     </nn-container>
   </nn-scroll-area>
 </template>
 
 <script>
+import nanoFooter from "../components/footer.vue";
+
 export default {
-  components: {},
+  components: { nanoFooter },
   data: () => ({
     dictionary: [
       { key: "nn-icon", description: "Icon component." },

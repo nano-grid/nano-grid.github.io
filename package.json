@@ -10,11 +10,9 @@
   "dependencies": {
     "@fontsource/montserrat": "^4.2.2",
     "core-js": "^3.6.5",
-    "konva": "^8.3.10",
     "nano-grid": "3.1.0",
     "nano-spirit": "file:../app_web_module_nano-spirit",
     "vue": "^3.0.0",
-    "vue-konva": "^3.0.0",
     "vue-router": "^4.0.0-0",
     "vuex": "^4.0.0-0"
   },

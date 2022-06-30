@@ -64,11 +64,6 @@ export default {
         icon: "flask",
         route: ["tests"],
       },
-      {
-        tooltip: "About",
-        icon: "mr-spirit",
-        route: ["about"],
-      },
     ],
   }),
   computed: {

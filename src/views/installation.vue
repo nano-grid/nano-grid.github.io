@@ -56,7 +56,7 @@
 
         <br />
 
-         <h2>Alternative to web components</h2>
+        <h2>Alternative to web components</h2>
 
         <nn-row>
           <nn-column size="1/4">
@@ -149,6 +149,8 @@
           </template>
         </div>
       </div>
+
+      <nano-footer />
     </nn-container>
   </nn-scroll-area>
 </template>
@@ -160,9 +162,10 @@ import react17 from "../db/code-react17";
 import vue3 from "../db/code-vue3";
 import vue2 from "../db/code-vue2";
 import webComponent from "../db/code-webcomponent";
+import nanoFooter from "../components/footer.vue";
 
 export default {
-  components: { Spirit },
+  components: { Spirit, nanoFooter },
   data: () => ({
     pmanager: "yarn",
     spirit: {

@@ -1,9 +1,8 @@
-import BuilderWorkareaView from '../views/builder-workarea.vue';
-import ClassesWorkareaView from '../views/classes-workarea.vue';
-import DictionaryWorkareaView from '../views/dictionary-workarea.vue';
-import DocumentationWorkareaView from '../views/documentation-workarea.vue';
-import TestsWorkareaView from '../views/tests-workarea.vue';
-import AboutWorkareaView from '../views/about-workarea.vue';
+import BuilderWorkareaView from '../views/home.vue';
+import ClassesWorkareaView from '../views/grid-system.vue';
+import DictionaryWorkareaView from '../views/documentation.vue';
+import DocumentationWorkareaView from '../views/installation.vue';
+import TestsWorkareaView from '../views/tests.vue';
 import { createRouter, createWebHistory } from 'vue-router';
 
 const routes = [
@@ -44,13 +43,6 @@ const routes = [
     name: 'tests',
     components: {
       workarea: TestsWorkareaView,
-    },
-  },
-  {
-    path: '/about',
-    name: 'about',
-    components: {
-      workarea: AboutWorkareaView,
     },
   },
 ]

@@ -1,10 +1,4 @@
 .section-builder {
-  h1 {
-    text-align: center;
-    margin-block: 8rem;
-    font-size: 5rem;
-  }
-
   .grid-row-preview {
     #{wc("column")} {
       transition: all ease 500ms;
