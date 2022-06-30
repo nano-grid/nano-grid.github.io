@@ -6198,12 +6198,10 @@ nan@^2.12.1:
   resolved "https://registry.yarnpkg.com/nan/-/nan-2.16.0.tgz#664f43e45460fb98faf00edca0bb0d7b8dce7916"
   integrity sha512-UdAqHyFngu7TfQKsCBgAA6pWDkT8MAO7d0jyOecVhN5354xbLqdn8mV9Tat9gepAupm0bt2DbeaSC8vS52MuFA==
 
-nano-grid@3.1.0:
-  version "3.1.0"
-  resolved "https://registry.yarnpkg.com/nano-grid/-/nano-grid-3.1.0.tgz#fc68341e0c90999859c82a64d61691c10a884efd"
-  integrity sha512-73ldzDzRxPjlqubXsOMHv2gHfNF0eUJvruX82gHbihSJpsVxf82BZqyROjGhy3qi0a2io4kenhZM/unqAP5jVw==
-  dependencies:
-    gulp-cli "^2.3.0"
+nano-grid@3.1.1:
+  version "3.1.1"
+  resolved "https://registry.yarnpkg.com/nano-grid/-/nano-grid-3.1.1.tgz#cc0e3551170ec5e47b228eab7d6b36b367475666"
+  integrity sha512-U+SOrYj3lHq6jVb9R4uNIyoSqlqqpE6Llg2HB9P42N82d1HUypx7zUizPx719GTVQMlaDfaQNlnhQMahMTRxiA==
 
 "nano-spirit@file:../app_web_module_nano-spirit":
   version "1.0.0"

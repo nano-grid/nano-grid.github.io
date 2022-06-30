@@ -5,35 +5,36 @@
         <h1>Installation</h1>
       </header>
       <div class="nn-box">
-        <nn-row>
-          <nn-column size="1/2">
-            <btn
-              mode="flat"
-              text="Yarn"
-              :color="pmanager === 'yarn' ? 'denim' : 'charcoal'"
-              @click="togglePackageManager('yarn')"
-            />
-          </nn-column>
-          <nn-column size="1/2">
-            <btn
-              mode="flat"
-              text="NPM"
-              :color="pmanager === 'npm' ? 'persian-red' : 'charcoal'"
-              @click="togglePackageManager('npm')"
-            />
-          </nn-column>
-        </nn-row>
-
         <div class="nn-shade">
-          <template v-if="pmanager === 'yarn'">
-            <p>Adding Nano Grid with <strong>Yarn</strong></p>
-            <spirit lang="shell" text="yarn add nano-grid" />
-          </template>
-
-          <template v-if="pmanager === 'npm'">
-            <p>Adding Nano Grid with <strong>Npm</strong></p>
-            <spirit lang="shell" text="npm install nano-grid" />
-          </template>
+          <h2>-- Adding Nano Grid</h2>
+          <nn-row>
+            <nn-column size="100%-75*2">
+              <div class="nn-label nn-input-color">
+                <template v-if="pmanager === 'yarn'">
+                  yarn add nano-grid
+                </template>
+                <template v-if="pmanager === 'npm'">
+                  npm install nano-grid
+                </template>
+              </div>
+            </nn-column>
+            <nn-column size="75">
+              <btn
+                mode="flat"
+                text="Yarn"
+                :color="pmanager === 'yarn' ? 'denim' : 'charcoal'"
+                @click="togglePackageManager('yarn')"
+              />
+            </nn-column>
+            <nn-column size="75">
+              <btn
+                mode="flat"
+                text="NPM"
+                :color="pmanager === 'npm' ? 'persian-red' : 'charcoal'"
+                @click="togglePackageManager('npm')"
+              />
+            </nn-column>
+          </nn-row>
         </div>
 
         <br />
@@ -41,7 +42,7 @@
         <div class="nn-shade">
           <h2>-- Registering components</h2>
           <spirit lang="js" :text="spirit.webComponent.install" />
-          <h2>-- Using the components</h2>
+          <h2>-- Using components</h2>
           <spirit lang="html" :text="spirit.webComponent.example" />
 
           <h2>-- Preview</h2>
@@ -104,7 +105,7 @@
             <spirit lang="vue" :text="spirit.vue2.html" />
             <h2>-- Registering components</h2>
             <spirit lang="js" :text="spirit.vue2.install" />
-            <h2>-- Using the components</h2>
+            <h2>-- Using components</h2>
             <spirit lang="html" :text="spirit.vue2.example" />
           </template>
 
@@ -115,7 +116,7 @@
             <spirit lang="vue" :text="spirit.vue3.html" />
             <h2>-- Registering components</h2>
             <spirit lang="js" :text="spirit.vue3.install" />
-            <h2>-- Using the components</h2>
+            <h2>-- Using components</h2>
             <spirit lang="html" :text="spirit.vue3.example" />
           </template>
 
@@ -131,7 +132,7 @@
             <spirit lang="svelte" :text="spirit.svelte3.rowHtml" />
             <h2>-- Registering components</h2>
             <spirit lang="js" :text="spirit.svelte3.install" />
-            <h2>-- Using the components</h2>
+            <h2>-- Using components</h2>
             <spirit lang="html" :text="spirit.svelte3.example" />
           </template>
 
@@ -143,7 +144,7 @@
             <spirit lang="react" :text="spirit.react17.rowJs" />
             <h2>-- Registering components</h2>
             <spirit lang="js" :text="spirit.react17.install" />
-            <h2>-- Using the components</h2>
+            <h2>-- Using components</h2>
             <spirit lang="html" :text="spirit.react17.example" />
           </template>
         </div>

@@ -120,127 +120,131 @@ export default {
 
       {
         key: "nn-silver",
-        description: "Color attribute for Btn and ScrollArea.",
+        description: "Color attribute for Btn, Label, Crayon and ScrollArea.",
       },
       {
         key: "nn-royal-purple",
-        description: "Color attribute for Btn and ScrollArea.",
+        description: "Color attribute for Btn, Label, Crayon and ScrollArea.",
       },
       {
         key: "nn-persian-red",
-        description: "Color attribute for Btn and ScrollArea.",
+        description: "Color attribute for Btn, Label, Crayon and ScrollArea.",
       },
       {
         key: "nn-denim",
-        description: "Color attribute for Btn and ScrollArea.",
+        description: "Color attribute for Btn, Label, Crayon and ScrollArea.",
       },
       {
         key: "nn-gold-tips",
-        description: "Color attribute for Btn and ScrollArea.",
+        description: "Color attribute for Btn, Label, Crayon and ScrollArea.",
       },
       {
         key: "nn-shamrock",
-        description: "Color attribute for Btn and ScrollArea.",
+        description: "Color attribute for Btn, Label, Crayon and ScrollArea.",
       },
       {
         key: "nn-cod-grey",
-        description: "Color attribute for Btn and ScrollArea.",
+        description: "Color attribute for Btn, Label, Crayon and ScrollArea.",
       },
       {
         key: "nn-gravel",
-        description: "Color attribute for Btn and ScrollArea.",
+        description: "Color attribute for Btn, Label, Crayon and ScrollArea.",
       },
       {
         key: "nn-emerald",
-        description: "Color attribute for Btn and ScrollArea.",
+        description: "Color attribute for Btn, Label, Crayon and ScrollArea.",
       },
       {
         key: "nn-burn-orange",
-        description: "Color attribute for Btn and ScrollArea.",
+        description: "Color attribute for Btn, Label, Crayon and ScrollArea.",
       },
       {
         key: "nn-razzmatazz",
-        description: "Color attribute for Btn and ScrollArea.",
+        description: "Color attribute for Btn, Label, Crayon and ScrollArea.",
       },
       {
         key: "nn-desert",
-        description: "Color attribute for Btn and ScrollArea.",
+        description: "Color attribute for Btn, Label, Crayon and ScrollArea.",
       },
       {
         key: "nn-charcoal",
-        description: "Color attribute for Btn and ScrollArea.",
+        description: "Color attribute for Btn, Label, Crayon and ScrollArea.",
       },
       {
         key: "nn-golden-brown",
-        description: "Color attribute for Btn and ScrollArea.",
+        description: "Color attribute for Btn, Label, Crayon and ScrollArea.",
       },
       {
         key: "nn-sepia",
-        description: "Color attribute for Btn and ScrollArea.",
+        description: "Color attribute for Btn, Label, Crayon and ScrollArea.",
       },
       {
         key: "nn-alizarin",
-        description: "Color attribute for Btn and ScrollArea.",
+        description: "Color attribute for Btn, Label, Crayon and ScrollArea.",
       },
       {
         key: "nn-rust",
-        description: "Color attribute for Btn and ScrollArea.",
+        description: "Color attribute for Btn, Label, Crayon and ScrollArea.",
       },
       {
         key: "nn-blush",
-        description: "Color attribute for Btn and ScrollArea.",
+        description: "Color attribute for Btn, Label, Crayon and ScrollArea.",
       },
       {
         key: "nn-fire-brick",
-        description: "Color attribute for Btn and ScrollArea.",
+        description: "Color attribute for Btn, Label, Crayon and ScrollArea.",
       },
       {
         key: "nn-sunglow",
-        description: "Color attribute for Btn and ScrollArea.",
+        description: "Color attribute for Btn, Label, Crayon and ScrollArea.",
       },
       {
         key: "nn-milk-punch",
-        description: "Color attribute for Btn and ScrollArea.",
+        description: "Color attribute for Btn, Label, Crayon and ScrollArea.",
       },
       {
         key: "nn-yukon-gold",
-        description: "Color attribute for Btn and ScrollArea.",
+        description: "Color attribute for Btn, Label, Crayon and ScrollArea.",
       },
       {
         key: "nn-green-pea",
-        description: "Color attribute for Btn and ScrollArea.",
+        description: "Color attribute for Btn, Label, Crayon and ScrollArea.",
       },
       {
         key: "nn-laurel",
-        description: "Color attribute for Btn and ScrollArea.",
+        description: "Color attribute for Btn, Label, Crayon and ScrollArea.",
       },
       {
         key: "nn-elf-green",
-        description: "Color attribute for Btn and ScrollArea.",
+        description: "Color attribute for Btn, Label, Crayon and ScrollArea.",
       },
       {
         key: "nn-lake",
-        description: "Color attribute for Btn and ScrollArea.",
+        description: "Color attribute for Btn, Label, Crayon and ScrollArea.",
       },
       {
         key: "nn-cobalt-blue",
-        description: "Color attribute for Btn and ScrollArea.",
+        description: "Color attribute for Btn, Label, Crayon and ScrollArea.",
       },
       {
         key: "nn-mariner",
-        description: "Color attribute for Btn and ScrollArea.",
+        description: "Color attribute for Btn, Label, Crayon and ScrollArea.",
       },
       {
         key: "nn-fuchsia",
-        description: "Color attribute for Btn and ScrollArea.",
+        description: "Color attribute for Btn, Label, Crayon and ScrollArea.",
       },
       {
         key: "nn-blue-violet",
-        description: "Color attribute for Btn and ScrollArea.",
+        description: "Color attribute for Btn, Label, Crayon and ScrollArea.",
       },
       {
         key: "nn-purple-heart",
-        description: "Color attribute for Btn and ScrollArea.",
+        description: "Color attribute for Btn, Label, Crayon and ScrollArea.",
+      },
+      {
+        key: "nn-input-color",
+        description: "Color attribute for Btn, Label, Crayon and ScrollArea.",
       },
     ],
   }),

@@ -14,6 +14,11 @@
     background: var(--color-panel-background);
     border-right: 1px solid #222;
 
+    nn-column {
+      padding-inline: 7px;
+      padding-block-start: 1rem;
+    }
+
     nn-container {
       margin: unset;
       height: 100%;

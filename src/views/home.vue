@@ -76,7 +76,7 @@
 
         <nn-row class="install">
           <nn-column size="100%-75*2">
-            <div class="nn-label">
+            <div class="nn-label nn-input-color">
               <template v-if="pmanager === 'yarn'">
                 yarn add nano-grid
               </template>
@@ -105,7 +105,6 @@
 
         <div class="nn-shade grid-row-preview">
           <nn-row
-            :vertical="rowSettings.vertical"
             :group="rowSettings.group"
             :grid="rowSettings.grid"
             :spacing="rowSettings.spacing"
@@ -141,7 +140,7 @@
                   />
                 </nn-column>
               </nn-row>
-              <nn-row v-if="hideForProduction">
+              <nn-row>
                 <nn-column size="100%">
                   <btn
                     text="Grid"
@@ -151,23 +150,7 @@
                   />
                 </nn-column>
               </nn-row>
-              <nn-row v-if="hideForProduction">
-                <nn-column size="100%">
-                  <btn
-                    text="Vertical"
-                    color="burn-orange"
-                    :active="rowSettings.vertical"
-                    @click.passive="toggleRowSettings('vertical')"
-                  />
-                </nn-column>
-              </nn-row>
-              <nn-row
-                v-if="
-                  hideForProduction &&
-                  !rowSettings.vertical &&
-                  !rowSettings.grid
-                "
-              >
+              <nn-row v-if="!rowSettings.grid">
                 <nn-column size="100%-50">
                   <input
                     type="range"
@@ -462,7 +445,7 @@ export default {
     },
     toggleRowSettings(property) {
       this.rowSettings[property] = !this.rowSettings[property];
-      if (property === "vertical" || property === "grid") {
+      if (property === "grid") {
         this.rowSettings.spacing = 0;
       }
     },
