@@ -103,7 +103,6 @@
             <p>HTML Code</p>
             <spirit lang="vue" :text="spirit.vue2.html" />
             <h2>-- Registering components</h2>
-            <p>[ app | index | main ].[ js | ts ]</p>
             <spirit lang="js" :text="spirit.vue2.install" />
             <h2>-- Using the components</h2>
             <spirit lang="html" :text="spirit.vue2.example" />
@@ -115,7 +114,6 @@
             <p>HTML Code</p>
             <spirit lang="vue" :text="spirit.vue3.html" />
             <h2>-- Registering components</h2>
-            <p>[ app | index | main ].[ js | ts ]</p>
             <spirit lang="js" :text="spirit.vue3.install" />
             <h2>-- Using the components</h2>
             <spirit lang="html" :text="spirit.vue3.example" />

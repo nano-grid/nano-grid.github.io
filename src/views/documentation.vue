@@ -42,6 +42,8 @@ export default {
   components: { nanoFooter },
   data: () => ({
     dictionary: [
+      { key: "nn-crayon", description: "Crayon component." },
+
       { key: "nn-icon", description: "Icon component." },
 
       { key: "nn-scroll-area", description: "ScrollArea component." },

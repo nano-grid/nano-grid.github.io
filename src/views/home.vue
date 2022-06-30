@@ -127,7 +127,7 @@
 
         <hr />
 
-        <nn-row class="nn-shade">
+        <nn-row class="nn-shade" breakpoint="lg">
           <nn-column size="1/4">
             <nn-container class="nn-box">
               <div class="nn-label">Row Settings</div>
@@ -322,7 +322,7 @@
           </nn-column>
 
           <nn-column size="3/4">
-            <nn-row>
+            <nn-row breakpoint="lg">
               <template
                 v-for="(rowController, rowCIndex) in grid"
                 :key="'row-' + rowCIndex"
