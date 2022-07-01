@@ -41,10 +41,10 @@
 
         <div class="nn-shade">
           <h2>-- Registering components</h2>
-          <p>On your <strong><nn-crayon color="burn-orange">main.js</nn-crayon></strong> file</p>
+          <p><strong><nn-crayon color="burn-orange">main.js</nn-crayon></strong></p>
           <spirit lang="js" :text="spirit.webComponent.install" />
 
-          <p>On your <strong><nn-crayon color="blush">application.scss</nn-crayon></strong> file</p>
+          <p><strong><nn-crayon color="blush">application.scss</nn-crayon></strong></p>
           <spirit lang="css" :text="spirit.webComponent.installCss" />
 
           <h2>-- Using components</h2>
