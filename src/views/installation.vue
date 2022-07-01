@@ -41,24 +41,35 @@
 
         <div class="nn-shade">
           <h2>-- Registering components</h2>
+          <p>On your <strong><nn-crayon color="burn-orange">main.js</nn-crayon></strong> file</p>
           <spirit lang="js" :text="spirit.webComponent.install" />
+
+          <p>On your <strong><nn-crayon color="blush">application.scss</nn-crayon></strong> file</p>
+          <spirit lang="css" :text="spirit.webComponent.installCss" />
+
           <h2>-- Using components</h2>
           <spirit lang="html" :text="spirit.webComponent.example" />
 
           <h2>-- Preview</h2>
           <nn-row>
-            <nn-column size="3/4">
-              <span class="nn-label nn-denim">75%</span>
+            <nn-column size="35">
+              <span class="nn-label nn-burn-orange">35</span>
             </nn-column>
-            <nn-column size="1/4">
-              <span class="nn-label nn-persian-red">25%</span>
+            <nn-column size="50%">
+              <span class="nn-label nn-silver">50%</span>
+            </nn-column>
+            <nn-column size="1/2 - 50 * 2">
+              <span class="nn-label nn-burn-orange">calc(50% - 100px)</span>
+            </nn-column>
+            <nn-column size="65">
+              <span class="nn-label nn-silver">65</span>
             </nn-column>
           </nn-row>
         </div>
 
         <br />
 
-        <h2>Alternative to web components</h2>
+        <h2>Building your own grid components</h2>
 
         <nn-row>
           <nn-column size="1/4">

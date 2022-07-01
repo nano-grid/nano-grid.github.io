@@ -195,17 +195,6 @@
                   />
                 </nn-column>
               </nn-row>
-
-              <nn-row>
-                <nn-column size="100%">
-                  <btn
-                    text="Ghost"
-                    color="gold-tips"
-                    :active="rowSettings.mode === 'ghost'"
-                    @click.passive="switchMode('ghost')"
-                  />
-                </nn-column>
-              </nn-row>
               <nn-row>
                 <nn-column size="100%">
                   <btn
@@ -213,6 +202,16 @@
                     color="gold-tips"
                     :active="rowSettings.mode === 'outline'"
                     @click.passive="switchMode('outline')"
+                  />
+                </nn-column>
+              </nn-row>
+              <nn-row>
+                <nn-column size="100%">
+                  <btn
+                    text="Ghost"
+                    color="gold-tips"
+                    :active="rowSettings.mode === 'ghost'"
+                    @click.passive="switchMode('ghost')"
                   />
                 </nn-column>
               </nn-row>
