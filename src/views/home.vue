@@ -74,27 +74,36 @@
           :lang="installBox.mode[installBox.selected].mode"
         />
 
-        <nn-row class="install">
-          <nn-column size="100%-75*2">
-            <div class="nn-label nn-input-color">
+        <nn-row class="install" breakpoint="md">
+          <nn-column size="100%-100*3">
+            <span class="nn-label nn-input-color">
               <template v-if="pmanager === 'yarn'">
                 yarn add nano-grid
               </template>
               <template v-else> npm install nano-grid </template>
-            </div>
+            </span>
           </nn-column>
-          <nn-column size="75">
+          <nn-column size="100">
             <btn
               text="Yarn"
               @click="togglePackageManager('yarn')"
               :color="pmanager === 'yarn' ? 'denim' : 'charcoal'"
             />
           </nn-column>
-          <nn-column size="75">
+          <nn-column size="100">
             <btn
               text="NPM"
               @click="togglePackageManager('npm')"
-              :color="pmanager === 'npm' ? 'persina-red' : 'charcoal'"
+              :color="pmanager === 'npm' ? 'persian-red' : 'charcoal'"
+            />
+          </nn-column>
+          <nn-column size="100">
+            <btn
+              tag="a"
+              href="/package/nano-grid.zip"
+              download="nano-grid.zip"
+              text="Download"
+              color="green-pea"
             />
           </nn-column>
         </nn-row>
@@ -231,20 +240,20 @@
               <nn-row>
                 <nn-column size="100%">
                   <btn
-                    text="Pride"
+                    text="Search Bar"
                     color="gold-tips"
-                    :active="isSimilarObject('rainbow')"
-                    @click.passive="setGrid(def.rainbow)"
+                    :active="isSimilarObject('searchBar')"
+                    @click.passive="setGrid(def.searchBar)"
                   />
                 </nn-column>
               </nn-row>
               <nn-row>
                 <nn-column size="100%">
                   <btn
-                    text="Search Bar"
+                    text="Pride"
                     color="gold-tips"
-                    :active="isSimilarObject('searchBar')"
-                    @click.passive="setGrid(def.searchBar)"
+                    :active="isSimilarObject('rainbow')"
+                    @click.passive="setGrid(def.rainbow)"
                   />
                 </nn-column>
               </nn-row>
@@ -399,7 +408,7 @@ export default {
       mode: "flat",
       spacing: 0,
       grid: false,
-      round: false,
+      round: true,
     },
     installBox: {
       selected: "webComponent",
@@ -408,7 +417,7 @@ export default {
     timer: undefined,
   }),
   created() {
-    this.grid = [...this.def.rainbow];
+    this.grid = [...this.def.searchBar];
     this.timer = setInterval(() => {
       this.animateTitle = !this.animateTitle;
     }, 10000);

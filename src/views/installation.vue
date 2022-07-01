@@ -7,8 +7,8 @@
       <div class="nn-box">
         <div class="nn-shade">
           <h2>-- Adding Nano Grid</h2>
-          <nn-row>
-            <nn-column size="100%-75*2">
+          <nn-row breakpoint="md">
+            <nn-column size="100%-100*3">
               <div class="nn-label nn-input-color">
                 <template v-if="pmanager === 'yarn'">
                   yarn add nano-grid
@@ -18,7 +18,7 @@
                 </template>
               </div>
             </nn-column>
-            <nn-column size="75">
+            <nn-column size="100">
               <btn
                 mode="flat"
                 text="Yarn"
@@ -26,7 +26,7 @@
                 @click="togglePackageManager('yarn')"
               />
             </nn-column>
-            <nn-column size="75">
+            <nn-column size="100">
               <btn
                 mode="flat"
                 text="NPM"
@@ -34,6 +34,15 @@
                 @click="togglePackageManager('npm')"
               />
             </nn-column>
+             <nn-column size="100">
+            <btn
+              tag="a"
+              href="/package/nano-grid.zip"
+              download="nano-grid.zip"
+              text="Download"
+              color="green-pea"
+            />
+          </nn-column>
           </nn-row>
         </div>
 
@@ -44,8 +53,13 @@
           <p><strong><nn-crayon color="burn-orange">main.js</nn-crayon></strong></p>
           <spirit lang="js" :text="spirit.webComponent.install" />
 
-          <p><strong><nn-crayon color="blush">application.scss</nn-crayon></strong></p>
+          <p>You can import on your <strong><nn-crayon color="blush">application.scss</nn-crayon></strong> the main module and any additional style for the buttons</p>
+          <spirit lang="css" :text="spirit.webComponent.installCssAlt" />
+
+          <p>Or just install specific modules</p>
           <spirit lang="css" :text="spirit.webComponent.installCss" />
+
+         
 
           <h2>-- Using components</h2>
           <spirit lang="html" :text="spirit.webComponent.example" />

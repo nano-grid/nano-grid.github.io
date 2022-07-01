@@ -2,9 +2,27 @@
   <nn-scroll-area color="royal-purple">
     <nn-container>
       <header>
-        <h1>Documentation</h1>
+        <h1>Dictionary</h1>
       </header>
       <div class="nn-box">
+        <h2>Components</h2>
+
+        <nn-row breakpoint="lg" grid>
+          <template
+            v-for="(item, itemIndex) in componentes"
+            :key="'itemIndex' + itemIndex"
+          >
+            <nn-column size="1/4">
+              <span class="nn-label">
+                {{ item.key }}
+              </span>
+            </nn-column>
+          </template>
+        </nn-row>
+      </div>
+
+      <div class="nn-box">
+        <h2>Row Settings</h2>
         <div class="table" role="table">
           <div class="table-head" role="rowgroup">
             <nn-row table-element breakpoint="lg">
@@ -14,7 +32,7 @@
           </div>
           <div class="table-body" role="rowgroup">
             <template
-              v-for="(item, itemIndex) in dictionary"
+              v-for="(item, itemIndex) in rows"
               :key="'itemIndex' + itemIndex"
             >
               <nn-row table-element breakpoint="lg">
@@ -30,6 +48,143 @@
         </div>
       </div>
 
+      <div class="nn-box">
+        <h2>Column Settings</h2>
+        <div class="table" role="table">
+          <div class="table-head" role="rowgroup">
+            <nn-row table-element breakpoint="lg">
+              <nn-column table-element size="1/2">Keyword</nn-column>
+              <nn-column table-element size="1/2">Description</nn-column>
+            </nn-row>
+          </div>
+          <div class="table-body" role="rowgroup">
+            <template
+              v-for="(item, itemIndex) in columns"
+              :key="'itemIndex' + itemIndex"
+            >
+              <nn-row table-element breakpoint="lg">
+                <nn-column table-element size="1/2">
+                  {{ item.key }}
+                </nn-column>
+                <nn-column table-element size="1/2">
+                  <span v-html="item.description" />
+                </nn-column>
+              </nn-row>
+            </template>
+          </div>
+        </div>
+      </div>
+
+      <div class="nn-box">
+        <h2>Button Settings</h2>
+        <div class="table" role="table">
+          <div class="table-head" role="rowgroup">
+            <nn-row table-element breakpoint="lg">
+              <nn-column table-element size="1/2">Keyword</nn-column>
+              <nn-column table-element size="1/2">Description</nn-column>
+            </nn-row>
+          </div>
+          <div class="table-body" role="rowgroup">
+            <template
+              v-for="(item, itemIndex) in buttons"
+              :key="'itemIndex' + itemIndex"
+            >
+              <nn-row table-element breakpoint="lg">
+                <nn-column table-element size="1/2">
+                  {{ item.key }}
+                </nn-column>
+                <nn-column table-element size="1/2">
+                  {{ item.description }}
+                </nn-column>
+              </nn-row>
+            </template>
+          </div>
+        </div>
+      </div>
+
+      <div class="nn-box">
+        <h2>Scroll Area Settings</h2>
+        <div class="table" role="table">
+          <div class="table-head" role="rowgroup">
+            <nn-row table-element breakpoint="lg">
+              <nn-column table-element size="1/2">Keyword</nn-column>
+              <nn-column table-element size="1/2">Description</nn-column>
+            </nn-row>
+          </div>
+          <div class="table-body" role="rowgroup">
+            <template
+              v-for="(item, itemIndex) in scrollarea"
+              :key="'itemIndex' + itemIndex"
+            >
+              <nn-row table-element breakpoint="lg">
+                <nn-column table-element size="1/2">
+                  {{ item.key }}
+                </nn-column>
+                <nn-column table-element size="1/2">
+                  {{ item.description }}
+                </nn-column>
+              </nn-row>
+            </template>
+          </div>
+        </div>
+      </div>
+
+      <div class="nn-box">
+        <h2>Container Settings</h2>
+        <div class="table" role="table">
+          <div class="table-head" role="rowgroup">
+            <nn-row table-element breakpoint="lg">
+              <nn-column table-element size="1/2">Keyword</nn-column>
+              <nn-column table-element size="1/2">Description</nn-column>
+            </nn-row>
+          </div>
+          <div class="table-body" role="rowgroup">
+            <template
+              v-for="(item, itemIndex) in containers"
+              :key="'itemIndex' + itemIndex"
+            >
+              <nn-row table-element breakpoint="lg">
+                <nn-column table-element size="1/2">
+                  {{ item.key }}
+                </nn-column>
+                <nn-column table-element size="1/2">
+                  {{ item.description }}
+                </nn-column>
+              </nn-row>
+            </template>
+          </div>
+        </div>
+      </div>
+
+      <div class="nn-box">
+        <h2>Colors</h2>
+
+        <nn-row breakpoint="lg" grid>
+          <template
+            v-for="(item, itemIndex) in colors"
+            :key="'itemIndex' + itemIndex"
+          >
+            <nn-column size="1/4">
+              <span :class="['nn-label', item]">
+                {{ item }}
+              </span>
+            </nn-column>
+          </template>
+        </nn-row>
+
+        <br />
+
+        <div class="nn-shade">
+          <p><em>And a extra color just for the label component</em></p>
+
+          <nn-row breakpoint="lg">
+            <nn-column size="1/4">
+              <span class="nn-label nn-input-color"> nn-input-color </span>
+            </nn-column>
+          </nn-row>
+        </div>
+      </div>
+
       <nano-footer />
     </nn-container>
   </nn-scroll-area>
@@ -37,216 +192,18 @@
 
 <script>
 import nanoFooter from "../components/footer.vue";
+import * as installation from "../db/installation";
 
 export default {
   components: { nanoFooter },
   data: () => ({
-    dictionary: [
-      { key: "nn-crayon", description: "Crayon component." },
-
-      { key: "nn-icon", description: "Icon component." },
-
-      { key: "nn-scroll-area", description: "ScrollArea component." },
-      {
-        key: "nn-no-vertical",
-        description: "ScrollArea prop that hide the vertical scroll bar.",
-      },
-      {
-        key: "nn-no-horizontal",
-        description: "ScrollArea prop that hide the horizontal scroll bar.",
-      },
-
-      { key: "nn-container", description: "Container component." },
-      {
-        key: "nn-sz[400, 500, 600, 900, 1450]",
-        description:
-          "Container prop that change the max-size of the container.",
-      },
-
-      { key: "nn-row", description: "Row component." },
-      {
-        key: "nn-vertical",
-        description:
-          "Row prop that change the horizontal direction of the flow to vertical.",
-      },
-      { key: "nn-break-sm", description: "Row prop that break on 576px." },
-      { key: "nn-break-md", description: "Row prop that break on 768px." },
-      { key: "nn-break-lg", description: "Row prop that break on 992px." },
-      { key: "nn-break-xl", description: "Row prop that break on 1200px." },
-      { key: "nn-break-xxl", description: "Row prop that break on 1400px." },
-      {
-        key: "nn-sp[25..400]",
-        description:
-          "Row prop that add padding-inline to the columns from 0.25rem to 4rem",
-      },
-      {
-        key: "nn-grid",
-        description:
-          "Row prop that convert that organize the columns as tiles.",
-      },
-
-      { key: "nn-column", description: "Column component." },
-      { key: "nn-label", description: "Label component." },
-      {
-        key: "nn-[w|h]-nd+bd+-[m|p][0..300]",
-        description: "Column prop that change the size of the column.",
-      },
-
-      { key: "nn-btn", description: "Button component." },
-      {
-        key: "nn-flat",
-        description: "Button prop that change the visual to a 3D flat style.",
-      },
-      {
-        key: "nn-round",
-        description: "Button prop that change the visual to a rounded style.",
-      },
-      {
-        key: "nn-ghost",
-        description: "Button prop that change the visual to a ghost style.",
-      },
-      {
-        key: "nn-outline",
-        description: "Button prop that change the visual to a outline style.",
-      },
-      {
-        key: "nn-nav",
-        description:
-          "Button prop that change the visual to a ghost style with a left line which mark navigation.",
-      },
-
-      { key: "nn-range", description: "Range component." },
-      { key: "nn-input", description: "Input component." },
-
-      {
-        key: "nn-silver",
-        description: "Color attribute for Btn, Label, Crayon and ScrollArea.",
-      },
-      {
-        key: "nn-royal-purple",
-        description: "Color attribute for Btn, Label, Crayon and ScrollArea.",
-      },
-      {
-        key: "nn-persian-red",
-        description: "Color attribute for Btn, Label, Crayon and ScrollArea.",
-      },
-      {
-        key: "nn-denim",
-        description: "Color attribute for Btn, Label, Crayon and ScrollArea.",
-      },
-      {
-        key: "nn-gold-tips",
-        description: "Color attribute for Btn, Label, Crayon and ScrollArea.",
-      },
-      {
-        key: "nn-shamrock",
-        description: "Color attribute for Btn, Label, Crayon and ScrollArea.",
-      },
-      {
-        key: "nn-cod-grey",
-        description: "Color attribute for Btn, Label, Crayon and ScrollArea.",
-      },
-      {
-        key: "nn-gravel",
-        description: "Color attribute for Btn, Label, Crayon and ScrollArea.",
-      },
-      {
-        key: "nn-emerald",
-        description: "Color attribute for Btn, Label, Crayon and ScrollArea.",
-      },
-      {
-        key: "nn-burn-orange",
-        description: "Color attribute for Btn, Label, Crayon and ScrollArea.",
-      },
-      {
-        key: "nn-razzmatazz",
-        description: "Color attribute for Btn, Label, Crayon and ScrollArea.",
-      },
-      {
-        key: "nn-desert",
-        description: "Color attribute for Btn, Label, Crayon and ScrollArea.",
-      },
-      {
-        key: "nn-charcoal",
-        description: "Color attribute for Btn, Label, Crayon and ScrollArea.",
-      },
-      {
-        key: "nn-golden-brown",
-        description: "Color attribute for Btn, Label, Crayon and ScrollArea.",
-      },
-      {
-        key: "nn-sepia",
-        description: "Color attribute for Btn, Label, Crayon and ScrollArea.",
-      },
-      {
-        key: "nn-alizarin",
-        description: "Color attribute for Btn, Label, Crayon and ScrollArea.",
-      },
-      {
-        key: "nn-rust",
-        description: "Color attribute for Btn, Label, Crayon and ScrollArea.",
-      },
-      {
-        key: "nn-blush",
-        description: "Color attribute for Btn, Label, Crayon and ScrollArea.",
-      },
-      {
-        key: "nn-fire-brick",
-        description: "Color attribute for Btn, Label, Crayon and ScrollArea.",
-      },
-      {
-        key: "nn-sunglow",
-        description: "Color attribute for Btn, Label, Crayon and ScrollArea.",
-      },
-      {
-        key: "nn-milk-punch",
-        description: "Color attribute for Btn, Label, Crayon and ScrollArea.",
-      },
-      {
-        key: "nn-yukon-gold",
-        description: "Color attribute for Btn, Label, Crayon and ScrollArea.",
-      },
-      {
-        key: "nn-green-pea",
-        description: "Color attribute for Btn, Label, Crayon and ScrollArea.",
-      },
-      {
-        key: "nn-laurel",
-        description: "Color attribute for Btn, Label, Crayon and ScrollArea.",
-      },
-      {
-        key: "nn-elf-green",
-        description: "Color attribute for Btn, Label, Crayon and ScrollArea.",
-      },
-      {
-        key: "nn-lake",
-        description: "Color attribute for Btn, Label, Crayon and ScrollArea.",
-      },
-      {
-        key: "nn-cobalt-blue",
-        description: "Color attribute for Btn, Label, Crayon and ScrollArea.",
-      },
-      {
-        key: "nn-mariner",
-        description: "Color attribute for Btn, Label, Crayon and ScrollArea.",
-      },
-      {
-        key: "nn-fuchsia",
-        description: "Color attribute for Btn, Label, Crayon and ScrollArea.",
-      },
-      {
-        key: "nn-blue-violet",
-        description: "Color attribute for Btn, Label, Crayon and ScrollArea.",
-      },
-      {
-        key: "nn-purple-heart",
-        description: "Color attribute for Btn, Label, Crayon and ScrollArea.",
-      },
-      {
-        key: "nn-input-color",
-        description: "Color attribute for Btn, Label, Crayon and ScrollArea.",
-      },
-    ],
+    containers: installation.containers,
+    columns: installation.columns,
+    rows: installation.rows,
+    buttons: installation.buttons,
+    scrollarea: installation.scrollarea,
+    colors: installation.colors,
+    componentes: installation.componentes,
   }),
   computed: {},
   created() {},
