@@ -401,7 +401,6 @@ export default {
       grid: false,
       round: false,
     },
-    hideForProduction: false,
     installBox: {
       selected: "webComponent",
       mode: installBoxMode,
