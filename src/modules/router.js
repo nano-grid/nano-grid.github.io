@@ -8,11 +8,11 @@ import { createRouter, createWebHistory } from 'vue-router';
 const routes = [
   {
     path: '/',
-    redirect: '/builder',
+    redirect: '/home',
   },
   {
-    path: '/builder',
-    name: 'builder',
+    path: '/home',
+    name: 'home',
     components: {
       workarea: BuilderWorkareaView,
     },

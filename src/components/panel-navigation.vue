@@ -40,7 +40,7 @@ export default {
       {
         tooltip: "Builder",
         icon: "paint-brush",
-        route: ["builder"],
+        route: ["home"],
       },
       {
         tooltip: "Installation",
