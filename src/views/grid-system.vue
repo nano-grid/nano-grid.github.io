@@ -114,7 +114,7 @@
             <nn-row breakpoint="lg">
               <template v-if="!allRowsVisible">
                 <nn-column size="1/3">
-                  <btn
+                  <nn-btn
                     text="Show 50+ Rows"
                     title="Show More Rows"
                     @click="showMoreRows()"
@@ -122,7 +122,7 @@
                   />
                 </nn-column>
                 <nn-column size="1/3">
-                  <btn
+                  <nn-btn
                     text="Show All Rows"
                     @click="showAllRows()"
                     color="gold-tips"

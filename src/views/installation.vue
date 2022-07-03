@@ -7,19 +7,22 @@
       <div class="nn-box">
         <div class="nn-shade">
           <h2>-- Adding Nano Grid</h2>
-          <nn-row breakpoint="md">
+          <nn-row breakpoint="lg">
             <nn-column size="100%-100*3">
               <div class="nn-label nn-input-color">
                 <template v-if="pmanager === 'yarn'">
                   yarn add nano-grid
                 </template>
-                <template v-if="pmanager === 'npm'">
+                <template v-else-if="pmanager === 'npm'">
                   npm install nano-grid
+                </template>
+                <template v-else-if="pmanager === 'clone'">
+                  git clone https://github.com/nano-grid/nano-grid.git
                 </template>
               </div>
             </nn-column>
             <nn-column size="100">
-              <btn
+              <nn-btn
                 mode="flat"
                 text="Yarn"
                 :color="pmanager === 'yarn' ? 'denim' : 'charcoal'"
@@ -27,22 +30,21 @@
               />
             </nn-column>
             <nn-column size="100">
-              <btn
+              <nn-btn
                 mode="flat"
                 text="NPM"
                 :color="pmanager === 'npm' ? 'persian-red' : 'charcoal'"
                 @click="togglePackageManager('npm')"
               />
             </nn-column>
-             <nn-column size="100">
-            <btn
-              tag="a"
-              href="/package/nano-grid.zip"
-              download="nano-grid.zip"
-              text="Download"
-              color="green-pea"
-            />
-          </nn-column>
+            <nn-column size="100">
+              <nn-btn
+                mode="flat"
+                text="Clone"
+                :color="pmanager === 'clone' ? 'royal-purple' : 'charcoal'"
+                @click="togglePackageManager('clone')"
+              />
+            </nn-column>
           </nn-row>
         </div>
 
@@ -50,44 +52,34 @@
 
         <div class="nn-shade">
           <h2>-- Registering components</h2>
-          <p><strong><nn-crayon color="burn-orange">main.js</nn-crayon></strong></p>
+          <p>In your
+            <nn-crayon tag="strong" color="burn-orange">Javascript</nn-crayon>
+          </p>
           <spirit lang="js" :text="spirit.webComponent.install" />
 
-          <p>You can import on your <strong><nn-crayon color="blush">application.scss</nn-crayon></strong> the main module and any additional style for the buttons</p>
+          <p>
+            In your
+            <nn-crayon tag="strong" color="blush">Sass</nn-crayon>
+          </p>
           <spirit lang="css" :text="spirit.webComponent.installCssAlt" />
 
-          <p>Or just install specific modules</p>
+          <p>You can also choose to import only specific modules</p>
           <spirit lang="css" :text="spirit.webComponent.installCss" />
 
-         
-
-          <h2>-- Using components</h2>
+          <h2>-- Test the following structure in your project</h2>
           <spirit lang="html" :text="spirit.webComponent.example" />
 
           <h2>-- Preview</h2>
-          <nn-row>
-            <nn-column size="35">
-              <span class="nn-label nn-burn-orange">35</span>
-            </nn-column>
-            <nn-column size="50%">
-              <span class="nn-label nn-silver">50%</span>
-            </nn-column>
-            <nn-column size="1/2 - 50 * 2">
-              <span class="nn-label nn-burn-orange">calc(50% - 100px)</span>
-            </nn-column>
-            <nn-column size="65">
-              <span class="nn-label nn-silver">65</span>
-            </nn-column>
-          </nn-row>
+          <div v-html="spirit.webComponent.example"/>
         </div>
 
         <br />
 
         <h2>Building your own grid components</h2>
 
-        <nn-row>
+        <nn-row breakpoint="lg">
           <nn-column size="1/4">
-            <btn
+            <nn-btn
               mode="flat"
               text="Vue 2"
               :color="spirit.current === 'vue2' ? 'shamrock' : 'charcoal'"
@@ -95,7 +87,7 @@
             />
           </nn-column>
           <nn-column size="1/4">
-            <btn
+            <nn-btn
               mode="flat"
               text="Vue 3"
               :color="spirit.current === 'vue3' ? 'elf-green' : 'charcoal'"
@@ -103,7 +95,7 @@
             />
           </nn-column>
           <nn-column size="1/4">
-            <btn
+            <nn-btn
               mode="flat"
               text="Svelte 3"
               :color="spirit.current === 'svelte3' ? 'burn-orange' : 'charcoal'"
@@ -111,7 +103,7 @@
             />
           </nn-column>
           <nn-column size="1/4">
-            <btn
+            <nn-btn
               mode="flat"
               text="React 17"
               :color="spirit.current === 'react17' ? 'cobalt-blue' : 'charcoal'"

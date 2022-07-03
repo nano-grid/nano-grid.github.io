@@ -15,7 +15,7 @@
             />
           </template>
           <hr />
-          <btn
+          <nn-btn
             color="gold-tips"
             size="md"
             mode="nav"

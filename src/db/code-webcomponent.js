@@ -30,18 +30,18 @@ installCssAlt: `@import "nano-grid/nano-grid";
 @import "nano-grid/scss/btn-outline";
 @import "nano-grid/scss/btn-nav";
 `,
-  example: `<nn-row>
-  <nn-column size="35">
-    35px
+  example: `<nn-row breakpoint="lg">
+  <nn-column size="75">
+    <span class="nn-label nn-burn-orange">75px</span>
   </nn-column>
   <nn-column size="50%">
-    50%
+    <span class="nn-label">50%</span>
   </nn-column>
-  <nn-column size="1/2 - 50 * 2">
-    calc(50% - 100px)
+  <nn-column size="1/2 - 80 * 2">
+    <span class="nn-label nn-burn-orange">calc(50% - 160px)</span>
   </nn-column>
-  <nn-column size="65">
-    65px
+  <nn-column size="85">
+    <span class="nn-label">85px</span>
   </nn-column>
 </nn-row>`,
 }

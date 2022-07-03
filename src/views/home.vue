@@ -19,20 +19,16 @@
         <h2>Start building apps fast and easy</h2>
         <p>
           Frontend toolkit powered by
-          <strong
-            ><nn-crayon color="blush" class="nn-blush">CSS</nn-crayon></strong
-          >
+          <nn-crayon tag="strong" color="blush" class="nn-blush">CSS</nn-crayon>
           and
-          <strong
-            ><nn-crayon color="burn-orange" class="nn-burn-orange"
-              >Javascript</nn-crayon
-            ></strong
+          <nn-crayon tag="strong" color="burn-orange" class="nn-burn-orange"
+            >Javascript</nn-crayon
           >.
         </p>
 
         <nn-row breakpoint="lg" grid class="install-pills">
           <nn-column size="1/4">
-            <btn
+            <nn-btn
               text="Web Component"
               @click="switchInstallTab('webComponent')"
               :color="
@@ -43,7 +39,7 @@
             />
           </nn-column>
           <nn-column size="1/4">
-            <btn
+            <nn-btn
               text="CSS Variables"
               @click="switchInstallTab('cssVars')"
               :color="
@@ -52,14 +48,14 @@
             />
           </nn-column>
           <nn-column size="1/4">
-            <btn
+            <nn-btn
               text="Sass"
               @click="switchInstallTab('sass')"
               :color="installBox.selected === 'sass' ? 'green-pea' : 'shamrock'"
             />
           </nn-column>
           <nn-column size="1/4">
-            <btn
+            <nn-btn
               text="Flexbox"
               @click="switchInstallTab('flexbox')"
               :color="
@@ -74,13 +70,18 @@
           :lang="installBox.mode[installBox.selected].mode"
         />
 
-        <nn-row class="install" breakpoint="md">
+        <nn-row class="install" breakpoint="lg">
           <nn-column size="100%-100*3">
             <span class="nn-label nn-input-color">
               <template v-if="pmanager === 'yarn'">
                 yarn add nano-grid
               </template>
-              <template v-else> npm install nano-grid </template>
+              <template v-else-if="pmanager === 'npm'">
+                npm install nano-grid
+              </template>
+              <template v-else-if="pmanager === 'clone'">
+                git clone https://github.com/nano-grid/nano-grid.git
+              </template>
             </span>
           </nn-column>
           <nn-column size="100">
@@ -99,11 +100,10 @@
           </nn-column>
           <nn-column size="100">
             <btn
-              tag="a"
-              href="/package/nano-grid.zip"
-              download="nano-grid.zip"
-              text="Download"
-              color="green-pea"
+              mode="flat"
+              text="Clone"
+              :color="pmanager === 'clone' ? 'royal-purple' : 'charcoal'"
+              @click="togglePackageManager('clone')"
             />
           </nn-column>
         </nn-row>

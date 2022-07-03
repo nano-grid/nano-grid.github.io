@@ -8,7 +8,7 @@
         <h2>getVals(formula: string): object</h2>
         <template v-for="(row, rowIndex) in cases" :key="'rowIndex' + rowIndex">
           <article class="nn-shade">
-            <nn-row>
+            <nn-row  breakpoint="lg">
               <nn-column size="100">
                 <span class="nn-label nn-charcoal">Case</span>
               </nn-column>

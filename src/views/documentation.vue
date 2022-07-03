@@ -175,7 +175,7 @@
         <br />
 
         <div class="nn-shade">
-          <p><em>And a extra color just for the label component</em></p>
+          <p><em>And an extra color just for the label component</em></p>
 
           <nn-row breakpoint="lg">
             <nn-column size="1/4">
