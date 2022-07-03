@@ -7,9 +7,9 @@ const cssVars = `.nn-light {
   --nn-input-color-shadow: hsl(0deg 0% 80%);
   --nn-input-color-shadow-hover: hsl(0deg 0% 70%);
   --nn-track-color: hsl(0deg 0% 84%);
-  --nn-thumb-color: #c0c0c0;
+  --nn-thumb-color: hsl(0deg 0% 75%);
   --nn-shade-background: hsl(240deg 10% 83% / 27%);
-  --nn-border-color: #e2e2e2;
+  --nn-border-color: hsl(0deg 0% 89%);
 }
 .nn-dark {
   --nn-color-foreground: hsl(0deg 0% 95%);
@@ -18,9 +18,9 @@ const cssVars = `.nn-light {
   --nn-input-color-shadow: hsl(240deg 11% 10%);
   --nn-input-color-shadow-hover: hsl(240deg 11% 20%);
   --nn-track-color: hsl(0deg 0% 14%);
-  --nn-thumb-color: #6e6e6e;
+  --nn-thumb-color: hsl(0deg 0% 43%);
   --nn-shade-background: hsl(240deg 12% 10% / 27%);
-  --nn-border-color: #444444;
+  --nn-border-color: hsl(0deg 0% 27%);
 }`;
 
 const sass = `#{wc("row")} {

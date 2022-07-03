@@ -1,6 +1,10 @@
 footer {
   text-align: center;
 
+  .nn-shade {
+    margin-block: 0;
+  }
+
   p {
     font-size: 0.75rem;
     text-transform: uppercase;
@@ -43,6 +47,31 @@ footer {
       background-color: #d73333;
       width: 0.5rem;
       height: 0.5rem;
+    }
+  }
+
+  ul.links {
+    padding: 0;
+    list-style: none;
+    margin: 0;
+  
+    li {
+      font-size: 0.65rem;
+      display: inline-block;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-block: 0;
+  
+      a {
+        color: var(--color-legend);
+      }
+  
+      &:not(:last-child) {
+        &:after {
+          content: "-";
+          margin-inline: 1rem;
+        }
+      }
     }
   }
 }

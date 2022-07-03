@@ -77,7 +77,7 @@
 
         <h2>Building your own grid components</h2>
 
-        <nn-row breakpoint="lg">
+        <nn-row breakpoint="lg" grid>
           <nn-column size="1/4">
             <nn-btn
               mode="flat"

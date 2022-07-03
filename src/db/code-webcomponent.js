@@ -23,7 +23,7 @@ export default {
 @import "nano-grid/scss/btn-outline";
 @import "nano-grid/scss/btn-nav";
 `,
-installCssAlt: `@import "nano-grid/nano-grid";
+installCssAlt: `@import "nano-grid/scss/nano-grid";
 
 // ---- Optional Button Styles (Flat Buttons are already included on nano-grid.scss)
 @import "nano-grid/scss/btn-ghost";

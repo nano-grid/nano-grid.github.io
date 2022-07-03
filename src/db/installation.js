@@ -94,6 +94,7 @@ export const colors = [
   "nn-sunglow",
   "nn-gold-tips",
   "nn-milk-punch",
+  "nn-white",
   "nn-silver",
   "nn-gravel",
   "nn-charcoal",

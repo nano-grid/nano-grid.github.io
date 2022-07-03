@@ -30,6 +30,7 @@ export const colorsType = [
   "fuchsia",
   "blue-violet",
   "purple-heart",
+  "white",
 ];
 
 export const directionsType = [

@@ -32,4 +32,5 @@ export const gColorsDB = [
   new gColor('gravel', '#6e6e6e'),
   new gColor('charcoal', '#444444'),
   new gColor('cod-grey', '#1b1b1b'),
+  new gColor('white', '#ffffff'),
 ];

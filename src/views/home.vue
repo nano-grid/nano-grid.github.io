@@ -85,21 +85,21 @@
             </span>
           </nn-column>
           <nn-column size="100">
-            <btn
+            <nn-btn
               text="Yarn"
               @click="togglePackageManager('yarn')"
               :color="pmanager === 'yarn' ? 'denim' : 'charcoal'"
             />
           </nn-column>
           <nn-column size="100">
-            <btn
+            <nn-btn
               text="NPM"
               @click="togglePackageManager('npm')"
               :color="pmanager === 'npm' ? 'persian-red' : 'charcoal'"
             />
           </nn-column>
           <nn-column size="100">
-            <btn
+            <nn-btn
               mode="flat"
               text="Clone"
               :color="pmanager === 'clone' ? 'royal-purple' : 'charcoal'"
@@ -120,7 +120,7 @@
           >
             <template v-for="(row, rowIndex) in grid" :key="'row-' + rowIndex">
               <nn-column :size="row.size">
-                <btn
+                <nn-btn
                   :round="rowSettings.round"
                   :mode="rowSettings.mode"
                   :color="row.color"
@@ -141,7 +141,7 @@
               <div class="nn-label">Row Settings</div>
               <nn-row>
                 <nn-column size="100%">
-                  <btn
+                  <nn-btn
                     text="Group"
                     color="burn-orange"
                     :active="rowSettings.group"
@@ -151,7 +151,7 @@
               </nn-row>
               <nn-row>
                 <nn-column size="100%">
-                  <btn
+                  <nn-btn
                     text="Grid"
                     color="burn-orange"
                     :active="rowSettings.grid"
@@ -183,7 +183,7 @@
               <div class="nn-label">Button Settings</div>
               <nn-row>
                 <nn-column size="100%">
-                  <btn
+                  <nn-btn
                     text="Round"
                     color="burn-orange"
                     :active="rowSettings.round"
@@ -196,7 +196,7 @@
 
               <nn-row>
                 <nn-column size="100%">
-                  <btn
+                  <nn-btn
                     text="Flat"
                     color="gold-tips"
                     :active="rowSettings.mode === 'flat'"
@@ -206,7 +206,7 @@
               </nn-row>
               <nn-row>
                 <nn-column size="100%">
-                  <btn
+                  <nn-btn
                     text="Outline"
                     color="gold-tips"
                     :active="rowSettings.mode === 'outline'"
@@ -216,7 +216,7 @@
               </nn-row>
               <nn-row>
                 <nn-column size="100%">
-                  <btn
+                  <nn-btn
                     text="Ghost"
                     color="gold-tips"
                     :active="rowSettings.mode === 'ghost'"
@@ -226,7 +226,7 @@
               </nn-row>
               <nn-row>
                 <nn-column size="100%">
-                  <btn
+                  <nn-btn
                     text="Nav"
                     color="gold-tips"
                     :active="rowSettings.mode === 'nav'"
@@ -239,7 +239,7 @@
               <div class="nn-label">Presets</div>
               <nn-row>
                 <nn-column size="100%">
-                  <btn
+                  <nn-btn
                     text="Search Bar"
                     color="gold-tips"
                     :active="isSimilarObject('searchBar')"
@@ -249,7 +249,7 @@
               </nn-row>
               <nn-row>
                 <nn-column size="100%">
-                  <btn
+                  <nn-btn
                     text="Pride"
                     color="gold-tips"
                     :active="isSimilarObject('rainbow')"
@@ -259,7 +259,7 @@
               </nn-row>
               <nn-row>
                 <nn-column size="100%">
-                  <btn
+                  <nn-btn
                     text="Magnet"
                     color="gold-tips"
                     :active="isSimilarObject('magnet')"
@@ -269,7 +269,7 @@
               </nn-row>
               <nn-row>
                 <nn-column size="100%">
-                  <btn
+                  <nn-btn
                     text="Esperanto"
                     color="gold-tips"
                     :active="isSimilarObject('esperanto')"
@@ -279,7 +279,7 @@
               </nn-row>
               <nn-row>
                 <nn-column size="100%">
-                  <btn
+                  <nn-btn
                     text="Dominican Republic"
                     color="gold-tips"
                     :active="isSimilarObject('dr')"
@@ -289,7 +289,7 @@
               </nn-row>
               <nn-row>
                 <nn-column size="100%">
-                  <btn
+                  <nn-btn
                     text="All Colors"
                     color="gold-tips"
                     :active="isSimilarObject('all')"
@@ -302,7 +302,7 @@
 
               <nn-row>
                 <nn-column size="100%">
-                  <btn
+                  <nn-btn
                     text="+ Add column"
                     color="burn-orange"
                     @click.passive="addRow()"
@@ -322,7 +322,7 @@
                   <nn-container>
                     <nn-row>
                       <nn-column size="100%">
-                        <btn
+                        <nn-btn
                           title="Remove Column"
                           :color="rowController.color"
                           :round="rowSettings.round"

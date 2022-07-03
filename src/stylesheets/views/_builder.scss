@@ -1,7 +1,8 @@
-.section-builder {
+.section-home {
   .grid-row-preview {
     #{wc("column")} {
       transition: all ease 500ms;
+      nn-btn,
       .nn-btn {
         height: 100%;
       }

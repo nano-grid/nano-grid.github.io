@@ -1,5 +1,5 @@
 echo "Getting ready for deployment"
-git push git@github.com:nano-grid.git --delete gh-pages
+# git push git@github.com:nano-grid.git --delete gh-pages
 npm run build
 ./create_routes.sh
 # cd dist || exit
