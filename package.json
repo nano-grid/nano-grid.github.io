@@ -10,8 +10,8 @@
   "dependencies": {
     "@fontsource/montserrat": "^4.2.2",
     "core-js": "^3.6.5",
-    "nano-grid": "3.2.1",
-    "nano-spirit": "file:../app_web_module_nano-spirit",
+    "nano-grid": "3.2.3",
+    "nano-spirit": "1.0.1",
     "vue": "^3.0.0",
     "vue-router": "^4.0.0-0",
     "vuex": "^4.0.0-0"

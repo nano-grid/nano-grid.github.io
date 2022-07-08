@@ -1,10 +1,10 @@
 module.exports = {
   lintOnSave: false,
 
-  devServer: {
-    host: 'mr',
-    port: 8200
-  },
+  // devServer: {
+  //   host: 'mr',
+  //   port: 8200
+  // },
 
   publicPath: process.env.NODE_ENV === 'production' ? '/' : '/',
 
