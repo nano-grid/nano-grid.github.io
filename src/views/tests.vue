@@ -16,7 +16,7 @@
                 <span class="nn-label nn-mariner">{{ row.case }}</span>
               </nn-column>
               <nn-column size="40%-100">
-                <span class="nn-label nn-mariner">{{ row.test }}</span>
+                <span class="nn-label nn-cobalt-blue">{{ row.test }}</span>
               </nn-column>
             </nn-row>
 
